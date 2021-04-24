@@ -25,6 +25,18 @@ MonoBehaviour:
     description: damage +25
     value: 25
     price: 220
+  - loreText: Add explosion agent to the torpedo mixture asda fsdf
+    description: damage +25
+    value: 35
+    price: 300
+  - loreText: Add explosion agent to the torpedo mixture fgosd ertk werr
+    description: damage +25
+    value: 45
+    price: 370
+  - loreText: "Add explosion agent to the torpedo mixturelaw \xE5per qwp\xE5le wtwt"
+    description: damage +25
+    value: 55
+    price: 430
   attackSpeed:
   - loreText: Optimize shooting mechanism
     description: attack speed +5

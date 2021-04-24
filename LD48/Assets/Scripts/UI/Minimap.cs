@@ -36,7 +36,7 @@ public class Minimap : MonoBehaviour
             Vector3 playerPos = sub.transform.position;
             int x = Mathf.RoundToInt(playerPos.x*1.72f) + 512 + 48;
             int y = Mathf.RoundToInt(playerPos.y*1.72f) + 512 + 48;
-            Debug.Log("X: " + x + "; Y: " + y);
+
             runtimeTex = DrawCircle(runtimeTex, Color.clear, x, y, 30);
             runtimeTex.Apply();
             rawImage.texture = runtimeTex;
