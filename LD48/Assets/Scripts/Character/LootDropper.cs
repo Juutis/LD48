@@ -5,14 +5,13 @@ using UnityEngine;
 public class LootDropper : MonoBehaviour
 {
     private LootConfig config;
-
-    [SerializeField]
-    private GameObject coinPrefab;
+    
+    private Coin coinPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        coinPrefab = Prefabs.Get<Coin>();
     }
 
     public void Initialize(LootConfig config)
