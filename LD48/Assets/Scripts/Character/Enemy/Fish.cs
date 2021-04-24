@@ -8,7 +8,12 @@ public class Fish : MonoBehaviour
     [SerializeField]
     private FishConfig config;
 
+    [SerializeField]
+    private GameObject dieEffect;
+
     private Hurtable hurtable;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +26,15 @@ public class Fish : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Die()
+    {
+        if (dieEffect != null)
+        {
+            var effect = Instantiate(dieEffect);
+            effect.transform.position = transform.position;
+        }
+        Destroy(gameObject);
     }
 }
