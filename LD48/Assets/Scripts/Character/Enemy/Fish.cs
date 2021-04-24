@@ -19,6 +19,8 @@ public class Fish : MonoBehaviour
 
     private Vector2 direction = Vector2.right;
 
+    private int playerLayer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,8 @@ public class Fish : MonoBehaviour
         renderer = GetComponentInChildren<SpriteRenderer>();
 
         Retarget();
+
+        playerLayer = LayerMask.NameToLayer("Player");
     }
 
     // Update is called once per frame
@@ -70,6 +74,18 @@ public class Fish : MonoBehaviour
         if (Random.Range(0.0f, 1.0f) < config.ChangeDirectionChance)
         {
             direction = new Vector2(-direction.x, direction.y);
+        }
+    }
+
+    public void OnCollisionStay2D(Collision2D collision)
+    {
+        var hurtable = collision.gameObject.GetComponent<Hurtable>();
+        if (hurtable != null)
+        {
+            if (collision.gameObject.layer == playerLayer)
+            {
+                hurtable.Hurt(config.DamageOnTouch);
+            }
         }
     }
 }
