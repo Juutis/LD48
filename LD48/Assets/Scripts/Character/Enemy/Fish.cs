@@ -16,10 +16,16 @@ public class Fish : MonoBehaviour
 
     private Rigidbody2D rigidBody;
     private SpriteRenderer renderer;
+    private Animator anim;
 
     private Vector2 direction = Vector2.right;
 
     private int playerLayer;
+    private Transform player;
+
+    private FishState state = FishState.IDLE;
+
+
 
 
     // Start is called before the first frame update
@@ -33,22 +39,40 @@ public class Fish : MonoBehaviour
 
         rigidBody = GetComponent<Rigidbody2D>();
         renderer = GetComponentInChildren<SpriteRenderer>();
+        anim = GetComponent<Animator>();
 
         Retarget();
 
         playerLayer = LayerMask.NameToLayer("Player");
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
+        handleState();
+
         if (rigidBody.velocity.x < -0.1f)
         {
-            renderer.flipX = false;
+            renderer.flipY = true;
         }
         if (rigidBody.velocity.x > 0.1f)
         {
-            renderer.flipX = true;
+            renderer.flipY = false;
+        }
+
+        float angleDiff = Vector2.SignedAngle(rigidBody.velocity, renderer.transform.right);
+        renderer.transform.Rotate(Vector3.back, angleDiff);
+
+        switch (state)
+        {
+            case FishState.IDLE:
+                anim.speed = 1.0f;
+                break;
+            case FishState.ATTACK:
+                anim.speed = config.AggroSpeedScaling;
+                break;
+
         }
     }
 
@@ -66,14 +90,23 @@ public class Fish : MonoBehaviour
     public void Move()
     {
         Retarget();
-        rigidBody.velocity = direction.normalized * config.MoveSpeed;
+        var moveSpeed = state == FishState.ATTACK ? config.MoveSpeed * config.AggroSpeedScaling : config.MoveSpeed;
+        rigidBody.velocity = direction.normalized * moveSpeed;
     }
 
     public void Retarget()
     {
-        if (Random.Range(0.0f, 1.0f) < config.ChangeDirectionChance)
+        if (state == FishState.IDLE)
         {
-            direction = new Vector2(-direction.x, direction.y);
+            if (Random.Range(0.0f, 1.0f) < config.ChangeDirectionChance)
+            {
+                direction = new Vector2(-direction.x, 0.0f);
+            }
+        }
+
+        if (state == FishState.ATTACK)
+        {
+            direction = player.position - transform.position;
         }
     }
 
@@ -88,4 +121,28 @@ public class Fish : MonoBehaviour
             }
         }
     }
+
+    private void handleState()
+    {
+        if (!config.IsAggressive)
+        {
+            return;
+        }
+
+        if (Vector2.Distance(player.position, transform.position) < config.AggroRange)
+        {
+            state = FishState.ATTACK;
+        }
+        else
+        {
+            state = FishState.IDLE;
+        }
+    }
+    
+}
+
+public enum FishState
+{
+    IDLE,
+    ATTACK
 }
