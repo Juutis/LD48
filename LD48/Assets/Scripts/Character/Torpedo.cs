@@ -16,6 +16,8 @@ public class Torpedo : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Vector3 followTarget;
 
+    private float damage = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,5 +45,15 @@ public class Torpedo : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        var hurtable = collision.gameObject.GetComponent<Hurtable>();
+        if (hurtable != null)
+        {
+            hurtable.Hurt(damage);
+        }
+        Destroy(gameObject);
     }
 }

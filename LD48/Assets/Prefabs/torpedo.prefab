@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 786137247246590500}
   - component: {fileID: 3996224623445504439}
   - component: {fileID: 3213714417870406597}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4819,7 +4819,7 @@ GameObject:
   - component: {fileID: 7353200981621417683}
   - component: {fileID: 6803029355811375829}
   - component: {fileID: 1882492507592644481}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: torpedo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
