@@ -29,7 +29,6 @@ public class Weapon : MonoBehaviour
         direction = dir;
 
         float angleDiff = Vector2.SignedAngle(direction, ammo.transform.right);
-        Debug.Log(angleDiff);
         ammo.transform.Rotate(Vector3.back, angleDiff);
     }
 }
