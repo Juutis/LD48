@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67fcfa6e3c990164f864a53c84fe2190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 0}
   damagedCallback:
     m_PersistentCalls:
       m_Calls: []
@@ -197,7 +196,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -233,5 +232,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ddf4ea0555f5d48bb631b36b1b5683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  config: {fileID: 0}
-  coinPrefab: {fileID: 606605026483854859, guid: ba1413e278f1dad4fb38d02b7c51d5a7, type: 3}
