@@ -26,7 +26,7 @@ public class PlayerControls : MonoBehaviour
         submarine.Accelerate(Input.GetAxis("Vertical") * accelerationSpeed * Time.deltaTime);
         submarine.Rotate(Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetMouseButtonDown(0))
         {
             if (weapon != null)
             {
