@@ -69,6 +69,8 @@ public class Submarine : MonoBehaviour
             speed = minSpeed;
         }
     }
-
-
+    public Vector2 GetRotation()
+    {
+        return direction;
+    }
 }
