@@ -49,7 +49,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 10
+  m_Intensity: 1
   m_LightVolumeIntensity: 0.18
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e0f07ba5d3a5744b127337e0b02fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDepth: 50
+  maxDepth: 200
 --- !u!1 &6493127047352183067
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +191,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.15801886, g: 0.2910115, b: 0.5, a: 0}
+  m_BackGroundColor: {r: 0.28773582, g: 0.75641364, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

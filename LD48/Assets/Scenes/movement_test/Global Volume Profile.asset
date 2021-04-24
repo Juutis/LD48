@@ -324,8 +324,8 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   redOutRedIn:
-    m_OverrideState: 0
-    m_Value: 100
+    m_OverrideState: 1
+    m_Value: 200
     min: -200
     max: 200
   redOutGreenIn:
