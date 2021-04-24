@@ -45,23 +45,29 @@ public class Fish : MonoBehaviour
 
         playerLayer = LayerMask.NameToLayer("Player");
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        if (config.IsJelly)
+        {
+            rigidBody.gravityScale = 0.1f;
+        }
+        Swim();
     }
 
     // Update is called once per frame
     void Update()
     {
         handleState();
-
-        if (rigidBody.velocity.x < -0.1f)
+        
+        if (direction.x < -0.1f)
         {
             renderer.flipY = true;
         }
-        if (rigidBody.velocity.x > 0.1f)
+        if (direction.x > 0.1f)
         {
             renderer.flipY = false;
         }
-
-        float angleDiff = Vector2.SignedAngle(rigidBody.velocity, renderer.transform.right);
+        
+        float angleDiff = Vector2.SignedAngle(direction, renderer.transform.right);
         renderer.transform.Rotate(Vector3.back, angleDiff);
 
         switch (state)
@@ -89,9 +95,25 @@ public class Fish : MonoBehaviour
 
     public void Move()
     {
+        anim.SetBool("swim", false);
         Retarget();
-        var moveSpeed = state == FishState.ATTACK ? config.MoveSpeed * config.AggroSpeedScaling : config.MoveSpeed;
-        rigidBody.velocity = direction.normalized * moveSpeed;
+        var speedScale = state == FishState.ATTACK ? config.AggroSpeedScaling : 1.0f;
+        rigidBody.velocity = direction.normalized * config.MoveSpeed * speedScale;
+
+        if (config.MinDelayBetweenMoving > 0.01f || config.MaxDelayBetweenMoving > 0.01f)
+        {
+            var delay = Random.Range(config.MinDelayBetweenMoving, config.MaxDelayBetweenMoving) / speedScale;
+            Invoke("Swim", delay);
+        }
+        else
+        {
+            Swim();
+        }
+    }
+
+    public void Swim()
+    {
+        anim.SetBool("swim", true);
     }
 
     public void Retarget()
@@ -100,7 +122,14 @@ public class Fish : MonoBehaviour
         {
             if (Random.Range(0.0f, 1.0f) < config.ChangeDirectionChance)
             {
-                direction = new Vector2(-direction.x, 0.0f);
+                if (config.IsJelly)
+                {
+                    direction = new Vector2(-direction.x, 10.0f);
+                }
+                else
+                {
+                    direction = new Vector2(-direction.x, 0.0f);
+                }
             }
         }
 

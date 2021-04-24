@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ddce6211b1bc93428742b68e0388e7a, type: 3}
+  m_Name: JellyfishConfig
+  m_EditorClassIdentifier: 
+  HealthConfig: {fileID: 11400000, guid: 3a41c676c21f7084a9316b80c34a2c58, type: 2}
+  LootConfig: {fileID: 11400000, guid: 2e2b7cd274d13ed42b0c3440612068d2, type: 2}
+  IsJelly: 1
+  MoveSpeed: 2
+  MinDelayBetweenMoving: 2
+  MaxDelayBetweenMoving: 4
+  ChangeDirectionChance: 0.5
+  DamageOnTouch: 1
+  IsAggressive: 0
+  AggroRange: 10
+  AggroSpeedScaling: 2
