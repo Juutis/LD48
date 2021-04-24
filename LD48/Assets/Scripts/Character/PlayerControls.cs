@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Hurtable))]
 public class PlayerControls : MonoBehaviour
 {
+    [SerializeField]
+    private PlayerConfig config;
+
     Submarine submarine;
     Renderer rend;
     Weapon weapon;
 
     private float accelerationSpeed = 10.0f;
     private float rotationSpeed = 180.0f;
+
+    private Hurtable hurtable;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +24,9 @@ public class PlayerControls : MonoBehaviour
         submarine = GetComponent<Submarine>();
         weapon = GetComponent<Weapon>();
         submarine.Init(rend.transform.parent);
+
+        hurtable = GetComponent<Hurtable>();
+        hurtable.Initialize(config.HealthConfig);
     }
 
     // Update is called once per frame

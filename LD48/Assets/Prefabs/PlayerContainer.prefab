@@ -114,19 +114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxDepth: 200
---- !u!114 &884266254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6493127047291419158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b217491fe888c9943ac84e0646c6b105, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammoPrefab: {fileID: 9175129961255327361, guid: c720ce2b00ba83848b83f269e3b0d751, type: 3}
 --- !u!1 &6493127047352183067
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +192,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0.6179246, g: 0.9231148, b: 1, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -348,11 +335,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d496a3c21ca3fb048b9c757daed4e9b8, type: 3}
---- !u!1 &6493127047291419158 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8599536492571019420, guid: d496a3c21ca3fb048b9c757daed4e9b8, type: 3}
-  m_PrefabInstance: {fileID: 3263852185162445450}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6493127047291419157 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8599536492571019423, guid: d496a3c21ca3fb048b9c757daed4e9b8, type: 3}
