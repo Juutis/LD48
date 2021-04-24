@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Submarine : MonoBehaviour
 {
+    [SerializeField]
+    private Animator propeller;
+
     private float maxSpeed = 8.0f;
     private float minSpeed = -4.0f;
     private float speedFalloff = 1.0f;
@@ -13,10 +16,12 @@ public class Submarine : MonoBehaviour
 
     private Rigidbody2D rigidBody;
     private Transform rotationTarget;
+    private SpriteRenderer renderer;
 
     public void Init(Transform rotationTarget)
     {
         this.rotationTarget = rotationTarget;
+        renderer = rotationTarget.GetComponentInChildren<SpriteRenderer>();
     }
 
     // Start is called before the first frame update
@@ -28,6 +33,19 @@ public class Submarine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float angleDiff = Vector2.SignedAngle(direction, rotationTarget.right);
+
+        if (direction.x < -0.1f)
+        {
+            renderer.transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
+            rotationTarget.Rotate(Vector3.back, angleDiff + 180);
+        }
+        if (direction.x > 0.1f)
+        {
+            renderer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            rotationTarget.Rotate(Vector3.back, angleDiff);
+        }
+
         if (speed > 0.01f)
         {
             speed -= speedFalloff * Time.deltaTime;
@@ -41,8 +59,8 @@ public class Submarine : MonoBehaviour
             speed = 0.0f;
         }
 
-        float angleDiff = Vector2.SignedAngle(direction, rotationTarget.right);
-        rotationTarget.Rotate(Vector3.back, angleDiff);
+        propeller.speed = Mathf.Abs(speed);
+
     }
 
     void FixedUpdate()
