@@ -6,7 +6,6 @@ using System.Linq;
 
 public class Hurtable : MonoBehaviour
 {
-    [SerializeField]
     private HealthConfig config;
 
     [SerializeField]

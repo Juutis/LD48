@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ddce6211b1bc93428742b68e0388e7a, type: 3}
-  m_Name: RedFishConfig
+  m_Script: {fileID: 11500000, guid: eb1b6333d6052344dae297875924d238, type: 3}
+  m_Name: RedFishLootConfig
   m_EditorClassIdentifier: 
-  HealthConfig: {fileID: 11400000, guid: 3a41c676c21f7084a9316b80c34a2c58, type: 2}
-  LootConfig: {fileID: 11400000, guid: 2e2b7cd274d13ed42b0c3440612068d2, type: 2}
-  MoveSpeed: 10
+  MinCoins: 1
+  MaxCoins: 10

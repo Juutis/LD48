@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Hurtable))]
+[RequireComponent(typeof(Hurtable), typeof(LootDropper))]
 public class Fish : MonoBehaviour
 {
     [SerializeField]
@@ -12,6 +12,7 @@ public class Fish : MonoBehaviour
     private GameObject dieEffect;
 
     private Hurtable hurtable;
+    private LootDropper lootDropper;
 
     
 
@@ -20,6 +21,9 @@ public class Fish : MonoBehaviour
     {
         hurtable = GetComponent<Hurtable>();
         hurtable.Initialize(config.HealthConfig);
+
+        lootDropper = GetComponent<LootDropper>();
+        lootDropper.Initialize(config.LootConfig);
     }
 
     // Update is called once per frame
@@ -35,6 +39,7 @@ public class Fish : MonoBehaviour
             var effect = Instantiate(dieEffect);
             effect.transform.position = transform.position;
         }
+        lootDropper.DropLoot();
         Destroy(gameObject);
     }
 }

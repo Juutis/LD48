@@ -4,5 +4,6 @@ using UnityEngine;
 public class FishConfig : ScriptableObject
 {
     public HealthConfig HealthConfig;
+    public LootConfig LootConfig;
     public float MoveSpeed;
 }
