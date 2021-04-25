@@ -27,3 +27,35 @@ MonoBehaviour:
     - {fileID: 8300000, guid: e42a538f91409044dba8e064c60677d1, type: 3}
     - {fileID: 8300000, guid: 4e0ea65cf8016fe42b29c5ce3cc03de5, type: 3}
     <Type>k__BackingField: 2
+  depthSounds:
+  - <Clips>k__BackingField:
+    - {fileID: 8300000, guid: fd221ba8aaf3da643924c3243e3045ba, type: 3}
+    - {fileID: 8300000, guid: 2142438b74c20d041a538c3d451f2007, type: 3}
+    - {fileID: 8300000, guid: c44c255f40a428f40a39efe3333bcac8, type: 3}
+    - {fileID: 8300000, guid: fd221ba8aaf3da643924c3243e3045ba, type: 3}
+    - {fileID: 8300000, guid: f6236f42f4151444bbb4584c661611c6, type: 3}
+    <DepthMin>k__BackingField: 100
+    <DepthMax>k__BackingField: 200
+    <Interval>k__BackingField: 10
+    <Chance>k__BackingField: 0.613
+    PlayedPreviously: 102.148315
+    Timer: 7.4352145
+  - <Clips>k__BackingField:
+    - {fileID: 8300000, guid: 67aa966686775004caf0a0d886ce8811, type: 3}
+    - {fileID: 8300000, guid: 0f9d9c9c7955f1c4989dd9e512f15a80, type: 3}
+    - {fileID: 8300000, guid: 32472ce7664f7b44a97d1c9e1a09e2ac, type: 3}
+    <DepthMin>k__BackingField: 200
+    <DepthMax>k__BackingField: 300
+    <Interval>k__BackingField: 10
+    <Chance>k__BackingField: 0.626
+    PlayedPreviously: 299.77194
+    Timer: 3.0541766
+  - <Clips>k__BackingField:
+    - {fileID: 8300000, guid: e42a538f91409044dba8e064c60677d1, type: 3}
+    - {fileID: 8300000, guid: 32472ce7664f7b44a97d1c9e1a09e2ac, type: 3}
+    <DepthMin>k__BackingField: 300
+    <DepthMax>k__BackingField: 400
+    <Interval>k__BackingField: 10
+    <Chance>k__BackingField: 0.609
+    PlayedPreviously: 299.77194
+    Timer: 3.0541766
