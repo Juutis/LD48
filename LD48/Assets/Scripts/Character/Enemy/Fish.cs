@@ -60,11 +60,11 @@ public class Fish : MonoBehaviour
         
         if (direction.x < -0.1f)
         {
-            renderer.flipY = true;
+            renderer.transform.localRotation = Quaternion.Euler(180, 0, 0);
         }
         if (direction.x > 0.1f)
         {
-            renderer.flipY = false;
+            renderer.transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
         
         float angleDiff = Vector2.SignedAngle(direction, renderer.transform.right);
