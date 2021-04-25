@@ -90,6 +90,11 @@ public class Torpedo : MonoBehaviour
         {
             hurtable.Hurt(damage);
         }
+        var lever = collision.gameObject.GetComponent<Lever>();
+        if (lever != null)
+        {
+            lever.Push();
+        }
         Kill();
     }
 
