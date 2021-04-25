@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 0.91529024, b: 0.6745283, a: 1}
   m_Intensity: 1
   m_LightVolumeIntensity: 0.25
-  m_LightVolumeIntensityEnabled: 1
+  m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
