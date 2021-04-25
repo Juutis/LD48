@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerConfig : ScriptableObject
 {
     public HealthConfig HealthConfig;
+    public HeadlightConfig HeadlightConfig;
     public float AccelerationSpeed = 10.0f;
     public float RotationSpeed = 180.0f;
     public float AttackSpeed = 6.5f; // attacks per 10s

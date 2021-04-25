@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class Submarine : MonoBehaviour
 {
     [SerializeField]
     private Animator propeller;
+    [SerializeField]
+    private Light2D headlight;
 
     private float maxSpeed = 8.0f;
     private float minSpeed = -4.0f;
@@ -13,15 +16,18 @@ public class Submarine : MonoBehaviour
 
     private Vector2 direction = Vector2.right;
     private float speed;
+    private float lightLevel = 0;
 
     private Rigidbody2D rigidBody;
     private Transform rotationTarget;
     private SpriteRenderer renderer;
+    private PlayerConfig config;
 
-    public void Init(Transform rotationTarget)
+    public void Init(Transform rotationTarget, PlayerConfig playerConfig)
     {
         this.rotationTarget = rotationTarget;
         renderer = rotationTarget.GetComponentInChildren<SpriteRenderer>();
+        config = playerConfig;
     }
 
     // Start is called before the first frame update
@@ -60,9 +66,16 @@ public class Submarine : MonoBehaviour
             speed = 0.0f;
         }
 
+        Debug.Log("moi1: " + (int)lightLevel);
+        Debug.Log("moi2: " + config.HeadlightConfig.headlightLevels[(int)lightLevel]);
+        HeadlightLevel lightLevelObj = config.HeadlightConfig.headlightLevels[(int)lightLevel];
+        headlight.intensity = lightLevelObj.intensity;
+        headlight.pointLightInnerAngle = lightLevelObj.innerSpotAngle;
+        headlight.pointLightOuterAngle = lightLevelObj.outerSpotAngle;
+        headlight.pointLightInnerRadius = lightLevelObj.innerRadius;
+        headlight.pointLightOuterRadius = lightLevelObj.outerRadius;
+
         propeller.speed = Mathf.Abs(speed);
-
-
     }
 
     void FixedUpdate()
@@ -108,5 +121,10 @@ public class Submarine : MonoBehaviour
     public void AddMaxSpeed(float value)
     {
         maxSpeed += value;
+    }
+
+    public void AddLightLevel(float value)
+    {
+        lightLevel += value;
     }
 }
