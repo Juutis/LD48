@@ -53,15 +53,15 @@ MonoBehaviour:
   movementSpeed:
   - loreText: Fix the engine
     description: movement speed +5
-    value: 5
+    value: 15
     price: 85
   - loreText: Optimize fuel intake
     description: movement speed +5
-    value: 5
+    value: 35
     price: 125
   - loreText: Add nitrous
     description: movement speed +15
-    value: 15
+    value: 55
     price: 300
   lights:
   - loreText: Change the old bulbs

@@ -27,7 +27,7 @@ public class PlayerControls : MonoBehaviour
         rend = GetComponentInChildren<Renderer>();
         submarine = GetComponent<Submarine>();
         weapon = GetComponent<Weapon>();
-        submarine.Init(rend.transform.parent);
+        submarine.Init(rend.transform.parent, config);
 
         hurtable = GetComponent<Hurtable>();
         hurtable.Initialize(config.HealthConfig);
@@ -79,6 +79,6 @@ public class PlayerControls : MonoBehaviour
 
     public void UpgradeLights(float value)
     {
-
+        submarine.AddLightLevel(value);
     }
 }
