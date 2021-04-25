@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e0f07ba5d3a5744b127337e0b02fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDepth: 200
+  maxDepth: 100
 --- !u!1 &6493127047352183067
 GameObject:
   m_ObjectHideFlags: 0
