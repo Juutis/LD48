@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Coin : MonoBehaviour
+public class HeartOfKraken : MonoBehaviour
 {
+    [SerializeField]
+    private HealthConfig healthConfig;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<Hurtable>().Initialize(healthConfig);
     }
 
     // Update is called once per frame
@@ -16,12 +19,8 @@ public class Coin : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void Kill()
     {
-        if(collision.gameObject.tag == "Player")
-        {
-            GameManager.main.AddMoney(1);
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }

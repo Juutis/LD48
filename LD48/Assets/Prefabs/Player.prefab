@@ -920,7 +920,7 @@ GameObject:
   - component: {fileID: 3613498687355429730}
   m_Layer: 6
   m_Name: SpriteRoot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -30,5 +30,12 @@ public class LootDropper : MonoBehaviour
             var coin = Prefabs.Get<Coin>();
             coin.transform.position = transform.position;
         }
+
+        var hearts = Random.Range(config.MinHearts, config.MaxHearts + 1);
+        for (var i = 0; i < hearts; i++)
+        {
+            var heart = Prefabs.Get<Heart>();
+            heart.transform.position = transform.position;
+        }
     }
 }

@@ -13,5 +13,6 @@ public class FishConfig : ScriptableObject
     public float DamageOnTouch = 1.0f;
     public bool IsAggressive = false;
     public float AggroRange = 3.0f;
+    public float AnimationSpeed = 1.0f;
     public float AggroSpeedScaling = 2.0f;
 }
