@@ -15,7 +15,10 @@ public class UpgradeTicket : MonoBehaviour
     [SerializeField]
     Text priceUI;
 
-    public void Initialize(string descriptionText, string loreText, float price)
+    int price;
+    float value;
+
+    public void Initialize(string descriptionText, string loreText, int price, float value)
     {
         lore.text = loreText;
         description.text = descriptionText;
@@ -34,7 +37,8 @@ public class UpgradeTicket : MonoBehaviour
 
         RectTransform loreTransform = lore.GetComponent<RectTransform>();
         loreTransform.sizeDelta = new Vector2(loreTransform.sizeDelta.x, loreTransform.sizeDelta.y + heightCoef);
-
+        this.price = price;
+        this.value = value;
     }
 
     void Start()
@@ -45,5 +49,15 @@ public class UpgradeTicket : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public int GetPrice()
+    {
+        return price;
+    }
+
+    public float GetValue()
+    {
+        return value;
     }
 }

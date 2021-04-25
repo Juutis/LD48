@@ -19,6 +19,7 @@ public class UpgradeStack : MonoBehaviour
     private float maxOffset = 4f;
     private float minAngle = -10f;
     private float maxAngle = 10f;
+    private UpgradeUI upgradeUI;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +60,7 @@ public class UpgradeStack : MonoBehaviour
             upgradeTicket.transform.Rotate(Vector3.back, randomAngle);
 
             UpgradeTicket ticket = upgradeTicket.GetComponent<UpgradeTicket>();
-            ticket.Initialize(u.description, u.loreText, u.price);
+            ticket.Initialize(u.description, u.loreText, u.price, u.value);
             tickets.Push(ticket);
 
             Button ticketButton = upgradeTicket.GetComponent<Button>();
@@ -75,8 +76,34 @@ public class UpgradeStack : MonoBehaviour
 
     public void BuyTopTicket()
     {
-        UpgradeTicket ticket = tickets.Pop();
-        Destroy(ticket.gameObject);
+        if (upgradeUI == null)
+        {
+            Debug.Log("UpgradeStack " + transform.name + " doesn't have UpgradeUI reference! Can't buy!");
+            return;
+        }
+
+        UpgradeTicket ticket = tickets.Peek();
+        if (upgradeUI.GetMoney() >= ticket.GetPrice())
+        {
+            upgradeUI.Upgrade(ticket.GetValue(), type);
+            tickets.Pop();
+            Destroy(ticket.gameObject);
+            upgradeUI.ReduceMoney(ticket.GetPrice());
+        }
+        else
+        {
+            // TODO: indicate, can't buy!
+        }
+    }
+
+    public UpgradeType GetUpgradeType()
+    {
+        return type;
+    }
+
+    public void SetUpgradeUI(UpgradeUI ui)
+    {
+        upgradeUI = ui;
     }
 }
 

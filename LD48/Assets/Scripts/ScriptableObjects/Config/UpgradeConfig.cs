@@ -19,5 +19,5 @@ public struct Upgrade
     public string loreText;
     public string description;
     public float value;
-    public float price;
+    public int price;
 }

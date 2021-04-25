@@ -21,9 +21,10 @@ public class Weapon : MonoBehaviour
     {
     }
 
-    public void Shoot(Transform shooter, Vector3 dir)
+    public void Shoot(Transform shooter, Vector3 dir, float damage)
     {
         GameObject ammo = Instantiate(ammoPrefab);
+        ammo.GetComponent<Torpedo>().Instantiate(damage);
         ammo.transform.parent = null;
         ammo.transform.position = shooter.transform.position + dir;
         direction = dir;
