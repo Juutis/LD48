@@ -17,6 +17,9 @@ public class HUDUI : MonoBehaviour
     private Text moneyText;
 
     private GameManager gameManager;
+    // 400 is the max depth the level should hit
+    // added 5% for less stressful gameplay 8)
+    private readonly float maxDepth = 420f;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +37,12 @@ public class HUDUI : MonoBehaviour
 
         RectTransform hullPointerTransform = hullPointer.GetComponent<RectTransform>();
         hullPointerTransform.localEulerAngles = new Vector3(0, 0, -eulerHPAngle);
+
+        float depth = GameManager.main.PlayerDepth;
+        float eulerPressure = 180f * (depth / maxDepth);
+
+        RectTransform pressurePointerTransform = pressurePointer.GetComponent<RectTransform>();
+        pressurePointerTransform.localEulerAngles = new Vector3(0, 0, -eulerPressure);
 
         float eulerMaxAngle = 180f * (maxHp / maxHpPool);
 
