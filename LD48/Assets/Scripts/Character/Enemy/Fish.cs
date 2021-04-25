@@ -87,7 +87,14 @@ public class Fish : MonoBehaviour
         }
         else
         {
-            rigidBody.gravityScale = 0.0f;
+            if (config.IsJelly)
+            {
+                rigidBody.gravityScale = 0.1f;
+            }
+            else
+            {
+                rigidBody.gravityScale = 0.0f;
+            }
         }
     }
 

@@ -13,7 +13,6 @@ public class UIPopupManager : MonoBehaviour
     private Transform popupContainer;
 
     void Start() {
-        
     }
 
     public void ShowPopup(string title, string message) {

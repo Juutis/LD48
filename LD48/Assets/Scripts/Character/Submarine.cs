@@ -33,17 +33,18 @@ public class Submarine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         float angleDiff = Vector2.SignedAngle(direction, rotationTarget.right);
+        var rotationPerTick = Mathf.Clamp(angleDiff, -720 * Time.deltaTime, 720 * Time.deltaTime);
+        rotationTarget.Rotate(Vector3.back, rotationPerTick);
 
         if (direction.x < -0.1f)
         {
-            renderer.transform.localScale = new Vector3(-1.0f, 1.0f, 1.0f);
-            rotationTarget.Rotate(Vector3.back, angleDiff + 180);
+            renderer.transform.localRotation = Quaternion.Euler(180, 0, 0);
         }
         if (direction.x > 0.1f)
         {
-            renderer.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-            rotationTarget.Rotate(Vector3.back, angleDiff);
+            renderer.transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
 
         if (speed > 0.01f)
