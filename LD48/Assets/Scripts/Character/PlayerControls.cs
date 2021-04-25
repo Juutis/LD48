@@ -94,4 +94,9 @@ public class PlayerControls : MonoBehaviour
     {
         return hurtable.GetMaxHealth();
     }
+
+    public void Heal(float amount)
+    {
+        hurtable.Heal(amount);
+    }
 }
