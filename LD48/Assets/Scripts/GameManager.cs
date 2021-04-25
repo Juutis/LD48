@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviour
     {
         return player.GetHealth();
     }
+    public void Heal(float amount)
+    {
+        player.Heal(amount);
+    }
 
     public float GetMaxHealth()
     {
@@ -62,7 +66,7 @@ public class GameManager : MonoBehaviour
 
     public void AddMoney(int amount)
     {
-        money -= amount;
+        money += amount;
     }
 
     public void Upgrade(float value, UpgradeType type)
