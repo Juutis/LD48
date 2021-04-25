@@ -130,22 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6306038798088232652, guid: a50907710121a4c45bec96079d453ea9, type: 3}
-      propertyPath: m_PointLightInnerAngle
-      value: 102.88267
-      objectReference: {fileID: 0}
-    - target: {fileID: 6306038798088232652, guid: a50907710121a4c45bec96079d453ea9, type: 3}
-      propertyPath: m_PointLightOuterAngle
-      value: 151.19461
-      objectReference: {fileID: 0}
-    - target: {fileID: 6306038798088232652, guid: a50907710121a4c45bec96079d453ea9, type: 3}
-      propertyPath: m_PointLightInnerRadius
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 6306038798088232652, guid: a50907710121a4c45bec96079d453ea9, type: 3}
-      propertyPath: m_PointLightOuterRadius
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 6493127047352183066, guid: a50907710121a4c45bec96079d453ea9, type: 3}
       propertyPath: m_RootOrder
       value: 0
