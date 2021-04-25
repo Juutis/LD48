@@ -14,6 +14,7 @@ public class Hurtable : MonoBehaviour
     [SerializeField]
     private UnityEvent deadAction;
 
+    private float maxHealth;
     private float currentHealth;
 
     private bool invulnerable = false;
@@ -37,6 +38,7 @@ public class Hurtable : MonoBehaviour
         if (config != null)
         {
             currentHealth = config.MaxHealth;
+            maxHealth = config.MaxHealth;
         }
     }
 
@@ -69,6 +71,16 @@ public class Hurtable : MonoBehaviour
                 damaged = Time.time;
             }
         }
+    }
+
+    public void Heal(float health)
+    {
+        currentHealth = Mathf.Min(maxHealth, currentHealth + health);
+    }
+
+    public void UpgradeMaxHealth(float upgrade)
+    {
+        maxHealth += upgrade;
     }
 
     public void Die() {

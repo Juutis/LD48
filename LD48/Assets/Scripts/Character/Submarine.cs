@@ -103,4 +103,9 @@ public class Submarine : MonoBehaviour
     {
         return direction;
     }
+
+    public void AddMaxSpeed(float value)
+    {
+        maxSpeed += value;
+    }
 }

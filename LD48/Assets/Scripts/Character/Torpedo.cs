@@ -39,6 +39,11 @@ public class Torpedo : MonoBehaviour
         direction = transform.right;
     }
 
+    public void Instantiate(float damage)
+    {
+        this.damage = damage;
+    }
+
     // Update is called once per frame
     void Update()
     {

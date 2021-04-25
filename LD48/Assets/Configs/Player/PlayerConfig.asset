@@ -15,3 +15,5 @@ MonoBehaviour:
   HealthConfig: {fileID: 11400000, guid: 70fb61a57a9510646bbf1476177a7299, type: 2}
   AccelerationSpeed: 10
   RotationSpeed: 180
+  AttackSpeed: 6.5
+  Damage: 1
