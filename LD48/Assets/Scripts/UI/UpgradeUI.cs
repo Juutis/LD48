@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradeUI : MonoBehaviour
 {
@@ -10,15 +11,18 @@ public class UpgradeUI : MonoBehaviour
     [SerializeField]
     private GameObject upgradeUI;
     private bool open = false;
+    [SerializeField]
+    private Text moneyText;
 
     List<UpgradeStack> upgradeStacks;
     private GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
-        upgradeStacks = GetComponentsInChildren<UpgradeStack>().ToList();
+        upgradeStacks = GetComponentsInChildren<UpgradeStack>(true).ToList();
         foreach (var stack in upgradeStacks)
         {
+            Debug.Log(this);
             stack.SetUpgradeUI(this);
         }
 
@@ -30,6 +34,7 @@ public class UpgradeUI : MonoBehaviour
     {
         openButton.SetActive(!open);
         upgradeUI.SetActive(open);
+        moneyText.text = string.Format("{0:D6}", GetMoney());
     }
 
     public void Close()
