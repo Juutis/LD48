@@ -9,6 +9,8 @@ public class PlayerControls : MonoBehaviour
     private PlayerConfig config;
 
     Submarine submarine;
+
+    public Submarine Submarine { get { return submarine; } }
     Renderer rend;
     Weapon weapon;
 

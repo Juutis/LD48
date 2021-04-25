@@ -7,6 +7,14 @@ public class GameManager : MonoBehaviour
     private PlayerControls player;
     private int money = 1000;
 
+    public float PlayerDepth { get { return player.Submarine.Depth; } }
+
+    public static GameManager main;
+
+    private void Awake() {
+        main = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +25,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
             SoundPlayer.main.PlaySound(GameSoundType.CreepySubmarineSound);
         }
-        if (Input.GetKeyDown(KeyCode.Q)) {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
             SoundPlayer.main.PlaySound(GameSoundType.Whale);
         }
     }
