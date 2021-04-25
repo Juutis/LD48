@@ -103,6 +103,7 @@ public class UpgradeStack : MonoBehaviour
 
     public void SetUpgradeUI(UpgradeUI ui)
     {
+        Debug.Log(this);
         upgradeUI = ui;
     }
 }

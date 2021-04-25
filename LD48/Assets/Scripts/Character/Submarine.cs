@@ -23,6 +23,8 @@ public class Submarine : MonoBehaviour
     private SpriteRenderer renderer;
     private PlayerConfig config;
 
+    public float Depth { get { return -transform.position.y; } }
+
     public float Speed { get { return rigidBody.velocity.magnitude; } }
 
     public void Init(Transform rotationTarget, PlayerConfig playerConfig)
