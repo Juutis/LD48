@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UIPopupManager : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class UIPopupManager : MonoBehaviour
     void Awake() {
         main = this;
         popupContainer = this.FindChildObject("container").GetComponent<Transform>();
+        EventSystem eventSystem = GameObject.FindObjectOfType<EventSystem>();
+        if (eventSystem == null) {
+            Prefabs.Get<EventSystem>();
+        }
     }
 
     private Transform popupContainer;
