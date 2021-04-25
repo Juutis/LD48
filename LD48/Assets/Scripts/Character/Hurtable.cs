@@ -95,6 +95,15 @@ public class Hurtable : MonoBehaviour
         invulnerable = false;
     }
 
+    public float GetHealth()
+    {
+        return currentHealth;
+    }
+    public float GetMaxHealth()
+    {
+        return maxHealth;
+    }
+
     private void tint()
     {
         var t = (Time.time - damaged) / config.DamageTintDuration;

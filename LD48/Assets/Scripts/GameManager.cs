@@ -35,6 +35,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public float GetHealth()
+    {
+        return player.GetHealth();
+    }
+
+    public float GetMaxHealth()
+    {
+        return player.GetMaxHealth();
+    }
+
     public void UpgradeHealth(float value)
     {
         player.UpgradeMaxHealth(value);

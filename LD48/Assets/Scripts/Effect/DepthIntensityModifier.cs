@@ -26,6 +26,5 @@ public class DepthIntensityModifier : MonoBehaviour
         t = Mathf.Log10((t + 0.2f) * 5);
         var intensity = Mathf.Lerp(startIntensity, 0, t);
         light.intensity = intensity;
-        Debug.Log(intensity);
     }
 }

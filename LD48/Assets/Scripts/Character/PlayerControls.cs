@@ -77,10 +77,21 @@ public class PlayerControls : MonoBehaviour
     public void UpgradeMaxHealth(float upgrade)
     {
         hurtable.UpgradeMaxHealth(upgrade);
+        hurtable.Heal(upgrade);
     }
 
     public void UpgradeLights(float value)
     {
         submarine.AddLightLevel(value);
+    }
+
+    public float GetHealth()
+    {
+        return hurtable.GetHealth();
+    }
+
+    public float GetMaxHealth()
+    {
+        return hurtable.GetMaxHealth();
     }
 }
