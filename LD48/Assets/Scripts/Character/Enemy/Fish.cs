@@ -71,8 +71,8 @@ public class Fish : MonoBehaviour
             }
         }
         
-        float angleDiff = Vector2.SignedAngle(direction, renderer.transform.right);
-        renderer.transform.Rotate(Vector3.back, angleDiff);
+        float angleDiff = Vector2.SignedAngle(direction, transform.right);
+        transform.Rotate(Vector3.back, angleDiff);
 
         switch (state)
         {
@@ -85,7 +85,7 @@ public class Fish : MonoBehaviour
 
         }
 
-        if (transform.position.y > 0)
+        if (!IsInWater())
         {
             rigidBody.gravityScale = 1.0f;
         }
@@ -102,6 +102,11 @@ public class Fish : MonoBehaviour
         }
     }
 
+    public bool IsInWater()
+    {
+        return transform.position.y <= 0;
+    }
+
     public void Die()
     {
         if (dieEffect != null)
@@ -115,10 +120,22 @@ public class Fish : MonoBehaviour
 
     public void Move()
     {
+        Move(false);
+    }
+
+    public void Move(bool skipRetarget)
+    {
         anim.SetBool("swim", false);
-        Retarget();
+        if (!skipRetarget)
+        {
+            Retarget();
+        }
         var speedScale = state == FishState.ATTACK ? config.AggroSpeedScaling : 1.0f;
-        rigidBody.velocity = direction.normalized * config.MoveSpeed * speedScale;
+
+        if (IsInWater())
+        {
+            rigidBody.velocity = direction.normalized * config.MoveSpeed * speedScale;
+        }
 
         if (config.MinDelayBetweenMoving > 0.01f || config.MaxDelayBetweenMoving > 0.01f)
         {
@@ -138,6 +155,11 @@ public class Fish : MonoBehaviour
 
     public void Retarget()
     {
+        if (!IsInWater())
+        {
+            return;
+        }
+
         if (state == FishState.IDLE)
         {
             if (Random.Range(0.0f, 1.0f) < config.ChangeDirectionChance)
@@ -175,13 +197,35 @@ public class Fish : MonoBehaviour
             if (collision.gameObject.layer == playerLayer)
             {
                 hurtable.Hurt(config.DamageOnTouch);
+                if (state == FishState.ATTACK)
+                {
+                    state = FishState.COOLDOWN;
+                    TurnAround();
+                    Move(true);
+                    Invoke("ReAggro", 1.0f);
+                }
             }
         }
+    }
+
+    public void TurnAround()
+    {
+        direction = transform.position - player.position;
+    }
+
+    public void ReAggro()
+    {
+        state = FishState.ATTACK;
     }
 
     private void handleState()
     {
         if (!config.IsAggressive)
+        {
+            return;
+        }
+
+        if (state == FishState.COOLDOWN)
         {
             return;
         }
@@ -201,5 +245,6 @@ public class Fish : MonoBehaviour
 public enum FishState
 {
     IDLE,
-    ATTACK
+    ATTACK,
+    COOLDOWN
 }

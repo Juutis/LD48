@@ -53,7 +53,7 @@ public class Torpedo : MonoBehaviour
         var mousePosition = Input.mousePosition;
         followTarget = (Vector2)Camera.main.ScreenToWorldPoint(mousePosition);
 
-        if (Time.time - createdTime <= followTime)
+        if (Time.time - createdTime <= followTime && alive)
         {
             float angleDiff = Vector2.SignedAngle(followTarget - transform.position, direction);
             direction = Quaternion.AngleAxis(Mathf.Clamp(angleDiff, -turnSpeed * Time.deltaTime, turnSpeed * Time.deltaTime), Vector3.back) * direction;
@@ -113,6 +113,7 @@ public class Torpedo : MonoBehaviour
         particles.Stop();
         collider.enabled = false;
         renderer.enabled = false;
+        trackingIndicator.SetActive(false);
         Invoke("ReallyKill", 1.5f);
     }
 
