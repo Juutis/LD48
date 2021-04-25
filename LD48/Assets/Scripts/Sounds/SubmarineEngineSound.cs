@@ -11,6 +11,14 @@ public class SubmarineEngineSound : MonoBehaviour
     private float pitchFactor = 1f;
     [SerializeField]
     private AudioSource audioSource;
+    [SerializeField]
+    private AudioSource underWaterSoundAudioSource;
+
+    [SerializeField]
+    private float maxUnderGroundVolume = 1f;
+    private float currentUnderGroundVolume = 0f;
+    [SerializeField]
+    private float depthUnderWaterSoundFactor = 1f;
     private Submarine submarine;
     void Start()
     {
@@ -22,5 +30,7 @@ public class SubmarineEngineSound : MonoBehaviour
     void Update()
     {
         audioSource.pitch = submarine.Speed * pitchFactor;
+        currentUnderGroundVolume = GameManager.main.PlayerDepth * depthUnderWaterSoundFactor;
+        underWaterSoundAudioSource.volume = Mathf.Clamp(currentUnderGroundVolume, 0, maxUnderGroundVolume);
     }
 }
