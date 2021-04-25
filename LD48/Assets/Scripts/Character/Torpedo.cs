@@ -25,6 +25,10 @@ public class Torpedo : MonoBehaviour
 
     private float createdTime;
 
+    private Vector2 direction = Vector2.right;
+
+    private bool alive = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +36,7 @@ public class Torpedo : MonoBehaviour
         collider = GetComponent<Collider2D>();
         renderer = GetComponent<Renderer>();
         createdTime = Time.time;
+        direction = transform.right;
     }
 
     // Update is called once per frame
@@ -42,18 +47,35 @@ public class Torpedo : MonoBehaviour
 
         if (Time.time - createdTime <= followTime)
         {
-            float angleDiff = Vector2.SignedAngle(followTarget - transform.position, transform.right);
-            transform.Rotate(Vector3.back, Mathf.Clamp(angleDiff, -turnSpeed * Time.deltaTime, turnSpeed * Time.deltaTime) );
+            float angleDiff = Vector2.SignedAngle(followTarget - transform.position, direction);
+            direction = Quaternion.AngleAxis(Mathf.Clamp(angleDiff, -turnSpeed * Time.deltaTime, turnSpeed * Time.deltaTime), Vector3.back) * direction;
         }
         else if (Time.time - createdTime > lifeTime)
         {
             Destroy(gameObject);
         }
+
+        float velocityAngleDiff = Vector2.SignedAngle(rigidBody.velocity, transform.right);
+        transform.Rotate(Vector3.back, velocityAngleDiff);
     }
 
     private void FixedUpdate()
     {
-        rigidBody.velocity = transform.right * speed;
+        if (transform.position.y > 0)
+        {
+            rigidBody.gravityScale = 1.0f;
+            direction = rigidBody.velocity;
+            particles.Stop();
+        }
+        else
+        {
+            rigidBody.velocity = direction.normalized * speed;
+            rigidBody.gravityScale = 0.0f;
+            if (alive)
+            {
+                particles.Play();
+            }
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -68,6 +90,7 @@ public class Torpedo : MonoBehaviour
 
     public void Kill()
     {
+        alive = false;
         particles.Stop();
         collider.enabled = false;
         renderer.enabled = false;

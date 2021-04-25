@@ -61,11 +61,23 @@ public class Submarine : MonoBehaviour
 
         propeller.speed = Mathf.Abs(speed);
 
+
     }
 
     void FixedUpdate()
     {
-        rigidBody.velocity = direction * speed;
+
+        if (transform.position.y > 0)
+        {
+            rigidBody.gravityScale = 1.0f;
+            direction = rigidBody.velocity.normalized;
+            speed = rigidBody.velocity.magnitude;
+        }
+        else
+        {
+            rigidBody.gravityScale = 0.0f;
+            rigidBody.velocity = direction * speed;
+        }
     }
 
     public void Rotate(float degrees)

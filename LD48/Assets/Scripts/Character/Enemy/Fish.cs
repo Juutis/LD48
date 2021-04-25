@@ -80,6 +80,15 @@ public class Fish : MonoBehaviour
                 break;
 
         }
+
+        if (transform.position.y > 0)
+        {
+            rigidBody.gravityScale = 1.0f;
+        }
+        else
+        {
+            rigidBody.gravityScale = 0.0f;
+        }
     }
 
     public void Die()
@@ -137,6 +146,11 @@ public class Fish : MonoBehaviour
         {
             direction = player.position - transform.position;
         }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        direction = new Vector2(-direction.x, 0.0f);
     }
 
     public void OnCollisionStay2D(Collision2D collision)
