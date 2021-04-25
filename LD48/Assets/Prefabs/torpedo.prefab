@@ -4954,5 +4954,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   lifeTime: 10
-  followTime: 5
-  createdTime: 0
+  followTime: 1.5
+  turnSpeed: 180
+  damage: 1
+  particles: {fileID: 3996224623445504439}
