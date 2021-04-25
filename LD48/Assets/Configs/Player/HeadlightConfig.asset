@@ -12,4 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad53876375f0a042b6bd6ed449dad9a, type: 3}
   m_Name: HeadlightConfig
   m_EditorClassIdentifier: 
-  headlightLevels: []
+  headlightLevels:
+  - innerSpotAngle: 60
+    outerSpotAngle: 108
+    innerRadius: 1.060431
+    outerRadius: 10
+    intensity: 0
+  - innerSpotAngle: 60
+    outerSpotAngle: 130
+    innerRadius: 1.060431
+    outerRadius: 10
+    intensity: 1
+  - innerSpotAngle: 80
+    outerSpotAngle: 130
+    innerRadius: 2
+    outerRadius: 15
+    intensity: 1
