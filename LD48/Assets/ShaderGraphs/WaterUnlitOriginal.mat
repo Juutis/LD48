@@ -28,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 21a7abf8f559f3848b34cd185d8f5fc9, type: 3}
+        m_Texture: {fileID: 2800000, guid: f6006ea5438eec74fb91f13c4f8b6b70, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskTex:
@@ -53,17 +53,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Vector1_52909EDA: 8.69
-    - Vector1_6A8B50F0: 0.289
+    - Vector1_52909EDA: -7.53
+    - Vector1_6A8B50F0: 1
     - Vector1_8F5EE685: 1
-    - Vector1_BB49C78C: 0.035
-    - Vector1_DC129BE: 2.21
-    - Vector1_DD119790: 1
+    - Vector1_BB49C78C: 0
+    - Vector1_DC129BE: 0
+    - Vector1_DD119790: 0
     - _EnableExternalAlpha: 0
     m_Colors:
-    - Color_4BDDB20F: {r: 0.000003829657, g: 0.000007659314, b: 0.000011488971, a: 0}
+    - Color_4BDDB20F: {r: 0.0013037875, g: 0.0013037875, b: 0.0013037875, a: 0}
     - Color_A0D31A6A: {r: 1, g: 1, b: 1, a: 1}
-    - Vector2_2F7B3F9F: {r: 0.01, g: 0.01, b: 0, a: 0}
+    - Vector2_2F7B3F9F: {r: 0.01, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}

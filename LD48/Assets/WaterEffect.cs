@@ -8,6 +8,13 @@ public class WaterEffect : MonoBehaviour
     private bool SetMainCameraLayerMask;
     [SerializeField]
     private LayerMask layerMask;
+
+    [SerializeField]
+    private RenderTexture renderTexture;
+    void Awake() {
+        renderTexture.width = Screen.width;
+        renderTexture.height = Screen.height;
+    }
     void Start()
     {
         if (SetMainCameraLayerMask) {

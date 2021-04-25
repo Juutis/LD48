@@ -21,6 +21,7 @@ public class Minimap : MonoBehaviour
         runtimeTex.SetPixels(fogTex.GetPixels());
         runtimeTex.Apply();
         rawImage.texture = runtimeTex;
+        mainCamera = Camera.main.transform;
     }
 
     // Update is called once per frame

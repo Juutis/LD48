@@ -19,7 +19,7 @@ TagManager:
   - Terrain
   - WaterEffect
   - Air
-  - 
+  - DontRenderTexture
   - 
   - 
   - 
@@ -41,4 +41,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: WaterEffectSortingLayer
+    uniqueID: 1243319497
+    locked: 0
+  - name: WaterBorderSortingLayer
+    uniqueID: 874201823
     locked: 0

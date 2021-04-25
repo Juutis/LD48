@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        UIPopupManager.main.ShowPopup("Hi", "Who are you?");
+        //UIPopupManager.main.ShowPopup("Hi", "Who are you?");
         player = FindObjectOfType<PlayerControls>();
     }
 
