@@ -18,6 +18,9 @@ public class Torpedo : MonoBehaviour
     [SerializeField]
     private ParticleSystem particles;
 
+    [SerializeField]
+    private GameObject trackingIndicator;
+
     private Rigidbody2D rigidBody;
     private Collider2D collider;
     private Renderer renderer;
@@ -54,10 +57,16 @@ public class Torpedo : MonoBehaviour
         {
             float angleDiff = Vector2.SignedAngle(followTarget - transform.position, direction);
             direction = Quaternion.AngleAxis(Mathf.Clamp(angleDiff, -turnSpeed * Time.deltaTime, turnSpeed * Time.deltaTime), Vector3.back) * direction;
+            trackingIndicator.SetActive(true);
         }
-        else if (Time.time - createdTime > lifeTime)
+        else
         {
-            Destroy(gameObject);
+            trackingIndicator.SetActive(false);
+        }
+
+        if (Time.time - createdTime > lifeTime)
+        {
+            Kill();
         }
 
         float velocityAngleDiff = Vector2.SignedAngle(rigidBody.velocity, transform.right);
