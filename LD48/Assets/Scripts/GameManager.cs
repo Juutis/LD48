@@ -61,7 +61,8 @@ public class GameManager : MonoBehaviour
                 player.UpgradeLights(value);
                 break;
             default:
-                Console.Log("Unknown UpgradeType found! " + type.ToString());
+                Debug.Log("Unknown UpgradeType found! " + type.ToString());
+                break;
         }
     }
 }
