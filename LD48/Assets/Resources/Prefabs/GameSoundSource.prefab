@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5382290234924898606}
-  - component: {fileID: 363547539002988290}
+  - component: {fileID: 4771790201213464469}
   m_Layer: 0
-  m_Name: GameSound
+  m_Name: GameSoundSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &363547539002988290
+--- !u!114 &4771790201213464469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,6 +40,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5382290234924898607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e1b219a8f881c54ab8925668d3661f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f082ca21fc993d42a3ceedcd04340e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
