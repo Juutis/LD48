@@ -66,14 +66,15 @@ public class Submarine : MonoBehaviour
             speed = 0.0f;
         }
 
-        Debug.Log("moi1: " + (int)lightLevel);
-        Debug.Log("moi2: " + config.HeadlightConfig.headlightLevels[(int)lightLevel]);
-        HeadlightLevel lightLevelObj = config.HeadlightConfig.headlightLevels[(int)lightLevel];
-        headlight.intensity = lightLevelObj.intensity;
-        headlight.pointLightInnerAngle = lightLevelObj.innerSpotAngle;
-        headlight.pointLightOuterAngle = lightLevelObj.outerSpotAngle;
-        headlight.pointLightInnerRadius = lightLevelObj.innerRadius;
-        headlight.pointLightOuterRadius = lightLevelObj.outerRadius;
+        if (headlight != null && config.HeadlightConfig != null && config.HeadlightConfig.headlightLevels.Count > 0)
+        {
+            HeadlightLevel lightLevelObj = config.HeadlightConfig.headlightLevels[(int)lightLevel];
+            headlight.intensity = lightLevelObj.intensity;
+            headlight.pointLightInnerAngle = lightLevelObj.innerSpotAngle;
+            headlight.pointLightOuterAngle = lightLevelObj.outerSpotAngle;
+            headlight.pointLightInnerRadius = lightLevelObj.innerRadius;
+            headlight.pointLightOuterRadius = lightLevelObj.outerRadius;
+        }
 
         propeller.speed = Mathf.Abs(speed);
     }
