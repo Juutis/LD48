@@ -49,6 +49,7 @@ public class Fish : MonoBehaviour
         if (config.IsJelly)
         {
             rigidBody.gravityScale = 0.1f;
+            direction = Vector2.up;
         }
         Swim();
     }
@@ -58,13 +59,16 @@ public class Fish : MonoBehaviour
     {
         handleState();
         
-        if (direction.x < -0.1f)
+        if (!config.IsJelly)
         {
-            renderer.transform.localRotation = Quaternion.Euler(180, 0, 0);
-        }
-        if (direction.x > 0.1f)
-        {
-            renderer.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            if (direction.x < -0.1f)
+            {
+                renderer.transform.localRotation = Quaternion.Euler(180, 0, 0);
+            }
+            if (direction.x > 0.1f)
+            {
+                renderer.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            }
         }
         
         float angleDiff = Vector2.SignedAngle(direction, renderer.transform.right);
@@ -73,7 +77,7 @@ public class Fish : MonoBehaviour
         switch (state)
         {
             case FishState.IDLE:
-                anim.speed = 1.0f;
+                anim.speed = config.AnimationSpeed;
                 break;
             case FishState.ATTACK:
                 anim.speed = config.AggroSpeedScaling;
@@ -157,7 +161,10 @@ public class Fish : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        direction = new Vector2(-direction.x, 0.0f);
+        if (!config.IsJelly)
+        {
+            direction = new Vector2(-direction.x, 0.0f);
+        }
     }
 
     public void OnCollisionStay2D(Collision2D collision)

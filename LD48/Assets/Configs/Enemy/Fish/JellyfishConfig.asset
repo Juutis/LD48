@@ -15,11 +15,12 @@ MonoBehaviour:
   HealthConfig: {fileID: 11400000, guid: 3a41c676c21f7084a9316b80c34a2c58, type: 2}
   LootConfig: {fileID: 11400000, guid: 2e2b7cd274d13ed42b0c3440612068d2, type: 2}
   IsJelly: 1
-  MoveSpeed: 2
+  MoveSpeed: 3
   MinDelayBetweenMoving: 2
   MaxDelayBetweenMoving: 4
   ChangeDirectionChance: 0.5
   DamageOnTouch: 1
   IsAggressive: 0
   AggroRange: 10
+  AnimationSpeed: 0.25
   AggroSpeedScaling: 2
