@@ -21,6 +21,9 @@ public class Torpedo : MonoBehaviour
     [SerializeField]
     private GameObject trackingIndicator;
 
+    [SerializeField]
+    private ParticleSystem explosion;
+
     private Rigidbody2D rigidBody;
     private Collider2D collider;
     private Renderer renderer;
@@ -111,6 +114,8 @@ public class Torpedo : MonoBehaviour
     {
         alive = false;
         particles.Stop();
+        var expl = Instantiate(explosion);
+        expl.transform.position = transform.position;
         collider.enabled = false;
         renderer.enabled = false;
         trackingIndicator.SetActive(false);
