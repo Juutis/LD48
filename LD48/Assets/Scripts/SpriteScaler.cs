@@ -22,11 +22,11 @@ public class SpriteScaler : MonoBehaviour
         float height = Camera.main.orthographicSize * 2.0f;
         float aspectRatio = (Screen.width * 1.0f) / (Screen.height * 1.0f);
         float width = height / Screen.height * Screen.width;
-        float paddingX = Screen.width / 1000;
-        float paddingY = paddingX * aspectRatio;
+        //float paddingX = Screen.width / 1000;
+        //float paddingY = paddingX * aspectRatio;
         transform.localScale = new Vector2(
-            width / spriteRenderer.sprite.bounds.size.x + paddingX,
-            height / spriteRenderer.sprite.bounds.size.y + paddingY
+            width / spriteRenderer.sprite.bounds.size.x, //+ paddingX,
+            height / spriteRenderer.sprite.bounds.size.y //+ paddingY
         );
         Debug.Log($"({aspectRatio}) {currentScreenWidth} -> {width} && {currentScreenHeight} -> {height}");
         Debug.Log($"boundsX -> {spriteRenderer.sprite.bounds.size.x} && boundsY -> {spriteRenderer.sprite.bounds.size.y}");
