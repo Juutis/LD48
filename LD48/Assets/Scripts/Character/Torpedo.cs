@@ -39,6 +39,9 @@ public class Torpedo : MonoBehaviour
     private bool alive = true;
     private bool follows = false;
 
+    private bool explodeSoundPlayed = false;
+    private bool hitSoundPlayed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -121,11 +124,21 @@ public class Torpedo : MonoBehaviour
         if (hurtable != null)
         {
             hurtable.Hurt(damage);
+            if (!hitSoundPlayed) {
+                hitSoundPlayed = true;
+                SoundPlayer.main.PlaySound(GameSoundType.TorpedoHitFish);
+            }
         }
         var lever = collision.gameObject.GetComponent<Lever>();
         if (lever != null)
         {
             lever.Push();
+        }
+        if (hurtable == null && lever == null) {
+            if (!hitSoundPlayed) {
+                hitSoundPlayed = true;
+                SoundPlayer.main.PlaySound(GameSoundType.TorpedoHitWall);
+            }
         }
         Kill();
     }
@@ -136,11 +149,21 @@ public class Torpedo : MonoBehaviour
         if (hurtable != null)
         {
             hurtable.Hurt(damage);
+            if (!hitSoundPlayed) {
+                hitSoundPlayed = true;
+                SoundPlayer.main.PlaySound(GameSoundType.TorpedoHitFish);
+            }
         }
         var lever = collision.gameObject.GetComponent<Lever>();
         if (lever != null)
         {
             lever.Push();
+        }
+        if (hurtable == null && lever == null) {
+            if (!hitSoundPlayed) {
+                hitSoundPlayed = true;
+                SoundPlayer.main.PlaySound(GameSoundType.TorpedoHitWall);
+            }
         }
         Kill();
     }
@@ -154,12 +177,20 @@ public class Torpedo : MonoBehaviour
             var expl = Instantiate(bigExplosion);
             expl.transform.position = transform.position;
             renderer.enabled = false;
+            if (!explodeSoundPlayed) {
+                explodeSoundPlayed = true;
+                SoundPlayer.main.PlaySound(GameSoundType.TorpedoExplodeStrong);
+            }
             Invoke("ReallyKill", 1.5f);
         }
         else if (damage > 15.0f)
         {
             var expl = Instantiate(explosion);
             expl.transform.position = transform.position;
+            if (!explodeSoundPlayed) {
+                explodeSoundPlayed = true;
+                SoundPlayer.main.PlaySound(GameSoundType.TorpedoExplodeWeak);
+            }
             renderer.enabled = false;
             Invoke("ReallyKill", 1.5f);
         }

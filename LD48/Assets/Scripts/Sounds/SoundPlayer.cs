@@ -29,11 +29,12 @@ public class SoundPlayer : MonoBehaviour
             Debug.Log($"Couldn't find a sound for {soundType}!");
         }
         AudioClip clip = gameSound.Clip;
-        PlayClip(clip);
-        /*if (gameSound.Clips != null && gameSound.Clips.Count > 0)
+        if (gameSound.Clips != null && gameSound.Clips.Count > 0)
         {
             clip = gameSound.Clips[Random.Range(0, gameSound.Clips.Count)];
         }
+        PlayClip(clip, gameSound.Volume);
+        /*
         GameSoundSource source = soundSources.Find(sound => sound.Clip == clip);
         if (source == null)
         {
@@ -45,13 +46,13 @@ public class SoundPlayer : MonoBehaviour
         source.Play();*/
     }
 
-    private void PlayClip(AudioClip clip) {
+    private void PlayClip(AudioClip clip, float volume = 1f) {
         GameSoundSource source = soundSources.Find(sound => sound.Clip == clip);
         if (source == null)
         {
             source = Prefabs.Get<GameSoundSource>();
             source.transform.SetParent(transform);
-            source.Init(clip);
+            source.Init(clip, volume);
             soundSources.Add(source);
         }
         source.Play();

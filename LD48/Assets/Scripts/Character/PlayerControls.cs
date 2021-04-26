@@ -83,6 +83,7 @@ public class PlayerControls : MonoBehaviour
             if (weapon != null)
             {
                 weapon.Shoot(transform, submarine.GetRotation(), damage);
+                SoundPlayer.main.PlaySound(GameSoundType.TorpedoShoot);
                 shot = Time.time;
             }
         }

@@ -39,6 +39,9 @@ public class GameSound
 
     [field: SerializeField]
     public GameSoundType Type { get; private set; }
+
+    [SerializeField]
+    public float Volume = 1f;
 }
 [System.Serializable]
 public class DepthSound
@@ -78,5 +81,8 @@ public enum GameSoundType
     Whale,
     CreepySubmarineSound,
     TorpedoShoot,
-    TorpedoHit
+    TorpedoHitWall,
+    TorpedoHitFish,
+    TorpedoExplodeWeak,
+    TorpedoExplodeStrong
 }
