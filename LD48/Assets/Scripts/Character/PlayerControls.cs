@@ -25,6 +25,9 @@ public class PlayerControls : MonoBehaviour
     private bool controlsEnabled = true;
 
     private float shot = 0f;
+    private bool yAxisInverted = false;
+
+    public bool YAxisInverted { get { return yAxisInverted;} }
 
     private FollowMouse crosshair;
 
@@ -51,14 +54,22 @@ public class PlayerControls : MonoBehaviour
         controlsEnabled = false;
     }
 
+    public void ToggleYAxis() {
+        yAxisInverted = !yAxisInverted;
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (!controlsEnabled) {
             return;
         }
+        float yAxis = Input.GetAxis("Horizontal");
+        if (yAxisInverted) {
+            yAxis = -yAxis;
+        }
         submarine.Accelerate(Input.GetAxis("Vertical") * accelerationSpeed * Time.deltaTime);
-        submarine.Rotate(Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime);
+        submarine.Rotate(yAxis * rotationSpeed * Time.deltaTime);
 
         float delay = 10f / attackSpeed;
         if (Input.GetMouseButton(0) && (Time.time - shot > delay))

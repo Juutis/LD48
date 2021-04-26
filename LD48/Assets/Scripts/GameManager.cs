@@ -25,14 +25,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            SoundPlayer.main.PlaySound(GameSoundType.CreepySubmarineSound);
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            SoundPlayer.main.PlaySound(GameSoundType.Whale);
-        }
+
     }
 
     public float GetHealth()

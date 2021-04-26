@@ -15,11 +15,19 @@ public class UIPopup : MonoBehaviour
 
     private UIPopupManager manager;
 
-    public void Init(Transform container, UIPopupManager manager)
+    public virtual void Init(Transform container, UIPopupManager manager)
     {
         this.manager = manager;
-        txtTitle = this.FindChildObject("titleText").GetComponent<Text>();
-        txtMessage = this.FindChildObject("messageText").GetComponent<Text>();
+        Transform titleObject = this.FindChildObject("titleText");
+        if (titleObject != null)
+        {
+            txtTitle = titleObject.GetComponent<Text>();
+        }
+        Transform messageObject = this.FindChildObject("messageText");
+        if (messageObject != null)
+        {
+            txtMessage = messageObject.GetComponent<Text>();
+        }
         transform.SetParent(container, false);
         animator = GetComponent<Animator>();
     }
@@ -30,8 +38,14 @@ public class UIPopup : MonoBehaviour
         {
             Time.timeScale = 0f;
             showing = true;
-            txtTitle.text = title;
-            txtMessage.text = message;
+            if (txtTitle != null)
+            {
+                txtTitle.text = title;
+            }
+            if (txtMessage != null)
+            {
+                txtMessage.text = message;
+            }
             animator.SetTrigger("Show");
         }
     }
