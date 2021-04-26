@@ -130,14 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3256738842458161583, guid: a50907710121a4c45bec96079d453ea9, type: 3}
-      propertyPath: m_Name
-      value: fadeBackground
-      objectReference: {fileID: 0}
-    - target: {fileID: 5146031259300323026, guid: a50907710121a4c45bec96079d453ea9, type: 3}
-      propertyPath: effectEnabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6493127047352183066, guid: a50907710121a4c45bec96079d453ea9, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -185,10 +177,6 @@ PrefabInstance:
     - target: {fileID: 6493127047352183067, guid: a50907710121a4c45bec96079d453ea9, type: 3}
       propertyPath: m_Name
       value: PlayerContainer
-      objectReference: {fileID: 0}
-    - target: {fileID: 7177198211209064226, guid: a50907710121a4c45bec96079d453ea9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8340825992264187250, guid: a50907710121a4c45bec96079d453ea9, type: 3}
       propertyPath: m_IsActive

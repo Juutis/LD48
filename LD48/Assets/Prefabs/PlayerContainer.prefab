@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 0.18
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000df421b34
+  m_ApplyToSortingLayers: 00000000df421b345dd89a3ec3c9a2241f713d7e4fe77640
   m_LightCookieSprite: {fileID: 21300000, guid: f6006ea5438eec74fb91f13c4f8b6b70, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -741,10 +741,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6493127047668759943}
     m_Modifications:
-    - target: {fileID: 7434714980741752948, guid: 61a3e56bb0554ad40a191b3243ab8389, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 4294956031
-      objectReference: {fileID: 0}
     - target: {fileID: 7434714980741752951, guid: 61a3e56bb0554ad40a191b3243ab8389, type: 3}
       propertyPath: m_RootOrder
       value: 0
