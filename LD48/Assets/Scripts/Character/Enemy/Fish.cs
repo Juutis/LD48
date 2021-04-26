@@ -132,6 +132,11 @@ public class Fish : MonoBehaviour
         }
         var speedScale = state == FishState.ATTACK ? config.AggroSpeedScaling : 1.0f;
 
+        if (transform.position.y > -1.0f)
+        {
+            direction = new Vector2(direction.normalized.x, -1.0f);
+        }
+
         if (IsInWater())
         {
             rigidBody.velocity = direction.normalized * config.MoveSpeed * speedScale;
