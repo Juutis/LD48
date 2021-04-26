@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e1308a1d7d1f0438ebc756657f5a24, type: 3}
   m_Name: HeartHealthConfig
   m_EditorClassIdentifier: 
-  MaxHealth: 10
+  MaxHealth: 50
   DamageTintColor: {r: 1, g: 0.5613208, b: 0.6069897, a: 0.36862746}
   InvulnerabilityDuration: 0
   DamageTintDuration: 1
