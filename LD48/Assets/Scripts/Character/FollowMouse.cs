@@ -5,14 +5,23 @@ using UnityEngine;
 public class FollowMouse : MonoBehaviour
 {
     public bool Follow = false;
+    public bool ReadyToShoot = true;
+
+    [SerializeField]
+    private Color readyColor;
+
+    [SerializeField]
+    private Color notReadyColor;
 
     [SerializeField]
     Transform anchor;
 
+    private SpriteRenderer rend;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rend = GetComponent<SpriteRenderer>();
     }
     
     void LateUpdate()
@@ -26,6 +35,15 @@ public class FollowMouse : MonoBehaviour
         else
         {
             transform.position = anchor.position;
+        }
+
+        if (ReadyToShoot)
+        {
+            rend.color = readyColor;
+        }
+        else
+        {
+            rend.color = notReadyColor;
         }
     }
 }

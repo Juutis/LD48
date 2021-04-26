@@ -260,7 +260,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294936575
+    m_Bits: 4294936543
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: f1398dd21ec2a5d49a1a57cd1e5173bc, type: 2}
   m_TargetDisplay: 0
@@ -387,7 +387,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1243319497
-  m_SortingLayer: 1
+  m_SortingLayer: 5
   m_SortingOrder: 100
   m_Sprite: {fileID: 21300000, guid: d655f52212380e54f89d0d6cef16f3ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -451,6 +451,9 @@ MonoBehaviour:
   renderTexture: {fileID: 8400000, guid: f1398dd21ec2a5d49a1a57cd1e5173bc, type: 2}
   container: {fileID: 6618499884248468540}
   effectEnabled: 1
+  optimizedLayerMask:
+    serializedVersion: 2
+    m_Bits: 2080
 --- !u!1 &8396868527093251592
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,7 +525,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 874201823
-  m_SortingLayer: 2
+  m_SortingLayer: 6
   m_SortingOrder: 1000
   m_Sprite: {fileID: 21300000, guid: 74bdda92dbc092c4f865910c40acb941, type: 3}
   m_Color: {r: 0, g: 0.83025, b: 0.990566, a: 1}

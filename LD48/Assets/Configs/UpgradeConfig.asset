@@ -38,15 +38,15 @@ MonoBehaviour:
     price: 30
   movementSpeed:
   - loreText: Fix the engine
-    description: Increases movement speed
+    description: Increases movement speed.
     value: 2
     price: 5
   - loreText: Optimize fuel intake
-    description: Greatly increases movement speed
+    description: Greatly increases movement speed.
     value: 2
     price: 10
   - loreText: Add NOS module
-    description: Turn your vessel into a submerged rocket
+    description: Turn your vessel into a submerged rocket.
     value: 2
     price: 15
   lights:
@@ -59,40 +59,40 @@ MonoBehaviour:
     value: 1
     price: 15
   - loreText: Install halogen lights
-    description: Greatly increases headlight effectiveness
+    description: Greatly increases headlight effectiveness.
     value: 1
     price: 35
   health:
   - loreText: Fix microfractures in the hull
-    description: Increases hull strength
+    description: Increases hull strength.
     value: 20
     price: 10
   - loreText: Reinforce hull seams
-    description: Greatly increases hull strength
+    description: Greatly increases hull strength.
     value: 20
     price: 20
   - loreText: Install military grade hull
-    description: The hull becomes almost indestructible
+    description: The hull becomes almost indestructible.
     value: 20
     price: 45
   homingTorpedos:
   - loreText: Remote Controlled Torpedoes
-    description: Torpedoes gain tracking
+    description: Torpedoes gain tracking.
     value: 1
     price: 10
   <DepthDamages>k__BackingField:
   - <HealthBelow>k__BackingField: 41
-    <Depth>k__BackingField: 100
-    <DamageTaken>k__BackingField: 1
+    <Depth>k__BackingField: 120
+    <DamageTaken>k__BackingField: 5
     <DamageInterval>k__BackingField: 2
     <Message>k__BackingField: You're going quite deep. You should fix microfractures
-      in the hull to proceed deeper or you'll take damage and eventually crash!
+      in the hull to proceed deeper or you'll be crushed!
   - <HealthBelow>k__BackingField: 61
     <Depth>k__BackingField: 200
-    <DamageTaken>k__BackingField: 2
+    <DamageTaken>k__BackingField: 5
     <DamageInterval>k__BackingField: 2
     <Message>k__BackingField: This deep the pressure gets pretty high. You should
-      enforce weak points so that your submarine doesn't implode!
+      reinforce the hull further so that your submarine doesn't implode!
   - <HealthBelow>k__BackingField: 81
     <Depth>k__BackingField: 300
     <DamageTaken>k__BackingField: 5

@@ -33,6 +33,18 @@ public class UpgradeUI : MonoBehaviour
     void Update()
     {
         moneyText.text = string.Format("{0:D6}", GetMoney());
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (!open && openButton.activeInHierarchy)
+            {
+                Open();
+            }
+            else if (open && upgradeUI.activeInHierarchy)
+            {
+                Close();
+            }
+        }
     }
 
     public void HideToggle() {
