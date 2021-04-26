@@ -17,4 +17,4 @@ MonoBehaviour:
   AccelerationSpeed: 10
   RotationSpeed: 180
   AttackSpeed: 6.5
-  Damage: 1
+  Damage: 10

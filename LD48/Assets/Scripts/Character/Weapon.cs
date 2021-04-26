@@ -10,6 +10,8 @@ public class Weapon : MonoBehaviour
     private Vector2 direction = Vector2.right;
     private Transform rotationTarget;
 
+    private bool trackingEnabled = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +26,17 @@ public class Weapon : MonoBehaviour
     public void Shoot(Transform shooter, Vector3 dir, float damage)
     {
         GameObject ammo = Instantiate(ammoPrefab);
-        ammo.GetComponent<Torpedo>().Instantiate(damage);
+        ammo.GetComponent<Torpedo>().Instantiate(damage, trackingEnabled);
         ammo.transform.parent = null;
         ammo.transform.position = shooter.transform.position + dir;
         direction = dir;
 
         float angleDiff = Vector2.SignedAngle(direction, ammo.transform.right);
         ammo.transform.Rotate(Vector3.back, angleDiff);
+    }
+
+    public void SetTracking(bool trackingEnabled)
+    {
+        this.trackingEnabled = trackingEnabled;
     }
 }

@@ -12,7 +12,7 @@ public class Submarine : MonoBehaviour
     [SerializeField]
     private GameObject headlightObject;
 
-    private float maxSpeed = 8.0f;
+    private float maxSpeed = 6.0f;
     private float minSpeed = -4.0f;
     private float speedFalloff = 1.0f;
 

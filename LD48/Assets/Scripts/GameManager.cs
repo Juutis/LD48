@@ -89,6 +89,9 @@ public class GameManager : MonoBehaviour
             case UpgradeType.lights:
                 player.UpgradeLights(value);
                 break;
+            case UpgradeType.homingTorpedos:
+                player.EnableHomingTorpedos();
+                break;
             default:
                 Debug.Log("Unknown UpgradeType found! " + type.ToString());
                 break;

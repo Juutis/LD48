@@ -4989,15 +4989,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 4b3f330d1ea9d384bb45db8f2a1f79f2, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!61 &6803029355811375829
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5040,7 +5040,8 @@ MonoBehaviour:
   lifeTime: 10
   followTime: 1.5
   turnSpeed: 180
-  damage: 1
+  damage: 10
   particles: {fileID: 3996224623445504439}
   trackingIndicator: {fileID: 8504320783059420007}
   explosion: {fileID: 8347928463204686868, guid: a7c19b68bb5a522449c779a96af99b95, type: 3}
+  bigExplosion: {fileID: 8347928463204686868, guid: e00476e56514f3d4db36351d64ce55f2, type: 3}

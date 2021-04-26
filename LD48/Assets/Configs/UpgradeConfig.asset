@@ -13,30 +13,16 @@ MonoBehaviour:
   m_Name: UpgradeConfig
   m_EditorClassIdentifier: 
   damage:
-  - loreText: New torpedo upgrade
-    description: damage +10
-    value: 10
+  - loreText: Makeshift warheads
+    description: Install makeshift warheads to torpedoes. The explosion deals increased
+      damage, but won't do much against sturdy objects.
+    value: 20
     price: 100
-  - loreText: Install the torpedo shooter properly
-    description: damage +15
-    value: 15
-    price: 150
   - loreText: Add explosion agent to the torpedo mixture
-    description: damage +25
-    value: 25
-    price: 220
-  - loreText: Add explosion agent to the torpedo mixture asda fsdf
-    description: damage +25
-    value: 35
-    price: 300
-  - loreText: Add explosion agent to the torpedo mixture fgosd ertk werr
-    description: damage +25
-    value: 45
-    price: 370
-  - loreText: "Add explosion agent to the torpedo mixturelaw \xE5per qwp\xE5le wtwt"
-    description: damage +25
-    value: 55
-    price: 430
+    description: Increase potency of torpedo warheads. The explosion deals great
+      damage and it can be used to clear obstacles blocking your path.
+    value: 30
+    price: 150
   attackSpeed:
   - loreText: Optimize shooting mechanism
     description: attack speed +5
@@ -52,16 +38,16 @@ MonoBehaviour:
     price: 350
   movementSpeed:
   - loreText: Fix the engine
-    description: movement speed +5
-    value: 15
+    description: movement speed +2
+    value: 2
     price: 85
   - loreText: Optimize fuel intake
-    description: movement speed +5
-    value: 35
+    description: movement speed +2
+    value: 2
     price: 125
   - loreText: Add nitrous
-    description: movement speed +15
-    value: 55
+    description: movement speed +2
+    value: 2
     price: 300
   lights:
   - loreText: Change the old bulbs
@@ -78,31 +64,36 @@ MonoBehaviour:
     price: 550
   health:
   - loreText: Fix microfractures in the hull
-    description: health +30
-    value: 30
+    description: health +25
+    value: 20
     price: 50
   - loreText: Enforce weak points
-    description: health +50
-    value: 50
+    description: health +20
+    value: 20
     price: 120
   - loreText: You know what to do ;)
-    description: health +70
-    value: 70
+    description: health +20
+    value: 20
     price: 230
+  homingTorpedos:
+  - loreText: Remote Controlled Torpedoes
+    description: Torpedoes gain tracking
+    value: 1
+    price: 100
   <DepthDamages>k__BackingField:
-  - <HealthBelow>k__BackingField: 30
+  - <HealthBelow>k__BackingField: 60
     <Depth>k__BackingField: 100
     <DamageTaken>k__BackingField: 1
     <DamageInterval>k__BackingField: 2
     <Message>k__BackingField: You're going quite deep. You should fix microfractures
       in the hull to proceed deeper or you'll take damage and eventually crash!
-  - <HealthBelow>k__BackingField: 50
+  - <HealthBelow>k__BackingField: 80
     <Depth>k__BackingField: 200
     <DamageTaken>k__BackingField: 2
     <DamageInterval>k__BackingField: 2
     <Message>k__BackingField: This deep the pressure gets pretty high. You should
       enforce weak points so that your submarine doesn't implode!
-  - <HealthBelow>k__BackingField: 100
+  - <HealthBelow>k__BackingField: 110
     <Depth>k__BackingField: 300
     <DamageTaken>k__BackingField: 5
     <DamageInterval>k__BackingField: 2
