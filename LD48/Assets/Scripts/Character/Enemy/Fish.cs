@@ -26,7 +26,15 @@ public class Fish : MonoBehaviour
     private FishState state = FishState.IDLE;
 
 
+    private FishSpawner spawner;
+    private FishSpawn spawn;
 
+    public void Init(FishSpawner fishSpawner, FishSpawn fishSpawn, Transform parent, Vector2 pos) {
+        spawner = fishSpawner;
+        spawn = fishSpawn;
+        transform.SetParent(parent);
+        transform.position = pos;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -115,6 +123,9 @@ public class Fish : MonoBehaviour
             effect.transform.position = transform.position;
         }
         lootDropper.DropLoot();
+        if (spawner != null) {
+            spawner.FishDie(spawn);
+        }
         Destroy(gameObject);
     }
 
