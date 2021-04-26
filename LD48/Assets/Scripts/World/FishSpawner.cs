@@ -16,6 +16,8 @@ public class FishSpawner : MonoBehaviour
     private Vector3 min;
     private Vector3 max;
 
+    private GameObject player;
+
     public void Start() {
         if (area == null || area.sprite == null) {
             Debug.Log($"Area must have a sprite! ({name})");
@@ -27,6 +29,8 @@ public class FishSpawner : MonoBehaviour
         max = spriteR.bounds.max;
         area.enabled = false;
         SpawnAllFish();
+
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void FishDie(FishSpawn spawn) {
@@ -46,6 +50,7 @@ public class FishSpawner : MonoBehaviour
             Debug.Log($"Spawn must have a prefab! ({name})");
             return;
         }
+
         float x = Random.Range(min.x, max.x);
         float y = Random.Range(min.y, max.y);
         Fish fish = Instantiate(spawn.Prefab).GetComponent<Fish>();
@@ -60,12 +65,17 @@ public class FishSpawner : MonoBehaviour
             return;
         }
         foreach(FishSpawn spawn in config.Spawns) {
-            if (spawn.SpawnedCount < spawn.Amount) {
+            if (spawn.SpawnedCount < spawn.Amount && PlayerIsFarEnough()) {
                 spawn.RespawnTimer += Time.deltaTime;
                 if (spawn.RespawnTimer > spawn.RespawnInterval) {
                     SpawnSingleFish(spawn);
                 }
             }
         }
+    }
+
+    public bool PlayerIsFarEnough()
+    {
+        return Vector2.Distance(transform.position, player.transform.position) > 50.0f;
     }
 }
