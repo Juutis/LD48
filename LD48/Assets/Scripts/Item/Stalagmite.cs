@@ -30,7 +30,7 @@ public class Stalagmite : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Damaged(float amount)
@@ -39,17 +39,19 @@ public class Stalagmite : MonoBehaviour
         {
             hurtable.Hurt(-amount);
         }
-        if (amount > 0f && GameManager.main.FirstHitNormal) {
-            UIPopupManager.main.ShowPopup("Breaking stalagmites", "It seems you need a stronger torpedo to get through these rock formations.");
-            GameManager.main.FirstHitNormal = false;
-        }
-        else if (amount > 10.0f && GameManager.main.FirstHitMedium) {
-            GameManager.main.FirstHitMedium = false;
-            UIPopupManager.main.ShowPopup("Breaking stalagmites", "Still not enough. Get the strongest torpedo and you may get through!");
-        }
         if (amount > 21.0f)
         {
             Kill();
+        }
+        else if (amount > 0f && GameManager.main.FirstHitNormal)
+        {
+            UIPopupManager.main.ShowPopup("Breaking stalagmites", "It seems you need a stronger torpedo to get through these rock formations.");
+            GameManager.main.FirstHitNormal = false;
+        }
+        else if (amount > 10.0f && GameManager.main.FirstHitMedium)
+        {
+            GameManager.main.FirstHitMedium = false;
+            UIPopupManager.main.ShowPopup("Breaking stalagmites", "Still not enough. Get the strongest torpedo and you may get through!");
         }
     }
 
