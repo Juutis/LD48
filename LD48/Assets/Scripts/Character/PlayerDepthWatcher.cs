@@ -62,9 +62,9 @@ public class PlayerDepthWatcher : MonoBehaviour
             .FirstOrDefault();
     }
 
-    private float soundThreshold = 0.8f;
-    private float minSoundDelay = 0.5f;
-    private float maxSoundDelay = 3.0f;
+    private float soundThreshold = 0.75f;
+    private float minSoundDelay = 1.5f;
+    private float maxSoundDelay = 10.0f;
 
     private float soundTimer = 0.0f;
 
@@ -73,15 +73,19 @@ public class PlayerDepthWatcher : MonoBehaviour
 
     private void PlayHullBreakingSounds()
     {
-        var depthPercentage = GameManager.main.PlayerDepth / FindRelevantDepthDamage().Depth;
-        if (depthPercentage > soundThreshold)
+        var depthDamage = FindRelevantDepthDamage();
+        if (depthDamage != null)
         {
-            var t = (depthPercentage - soundThreshold) / (1 - soundThreshold);
-            var soundDelay = Mathf.Lerp(maxSoundDelay, minSoundDelay, t);
-            if (soundTimer <= Time.time - soundDelay)
+            var depthPercentage = GameManager.main.PlayerDepth / depthDamage.Depth;
+            if (depthPercentage > soundThreshold)
             {
-                soundTimer = Time.time;
-                SoundPlayer.main.PlaySound(breakingSound);
+                var t = (depthPercentage - soundThreshold) / (1 - soundThreshold);
+                var soundDelay = Mathf.Lerp(maxSoundDelay, minSoundDelay, t);
+                if (soundTimer <= Time.time - soundDelay)
+                {
+                    soundTimer = Time.time;
+                    SoundPlayer.main.PlaySound(breakingSound);
+                }
             }
         }
     }
