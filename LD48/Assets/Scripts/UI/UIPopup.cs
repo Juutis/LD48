@@ -25,6 +25,7 @@ public class UIPopup : MonoBehaviour
     {
         if (!showing)
         {
+            Time.timeScale = 0f;
             showing = true;
             txtTitle.text = title;
             txtMessage.text = message;
@@ -48,6 +49,7 @@ public class UIPopup : MonoBehaviour
 
     public void HideFinished()
     {
+        Time.timeScale = 1f;
         hiding = false;
     }
 }

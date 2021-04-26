@@ -5,6 +5,12 @@ using UnityEngine.UI;
 
 public class HUDUI : MonoBehaviour
 {
+    public static HUDUI main;
+
+    void Awake() {
+        main = this;
+    }
+
     [SerializeField]
     private GameObject hullPointer;
     [SerializeField]
@@ -16,15 +22,27 @@ public class HUDUI : MonoBehaviour
     [SerializeField]
     private Text moneyText;
 
+    [SerializeField]
+    private UIWarningBlinker pressureBlinker;
+
     private GameManager gameManager;
     // 400 is the max depth the level should hit
     // added 5% for less stressful gameplay 8)
+    // lol
     private readonly float maxDepth = 420f;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+    }
+
+    public void StartPressureWarning() {
+        pressureBlinker.StartBlinking();
+    }
+
+    public void StopPressureWarning() {
+        pressureBlinker.StopBlinking();
     }
 
     // Update is called once per frame

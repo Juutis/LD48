@@ -29,6 +29,11 @@ public class SubmarineEngineSound : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Time.timeScale < 1f && audioSource.isPlaying) {
+            audioSource.Pause();
+        } else if (Time.timeScale >= 0.9f && !audioSource.isPlaying) {
+            audioSource.Play();
+        }
         audioSource.pitch = submarine.Speed * pitchFactor;
         currentUnderGroundVolume = GameManager.main.PlayerDepth * depthUnderWaterSoundFactor;
         underWaterSoundAudioSource.volume = Mathf.Clamp(currentUnderGroundVolume, 0, maxUnderGroundVolume);

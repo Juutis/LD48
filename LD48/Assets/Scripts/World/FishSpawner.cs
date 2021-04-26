@@ -57,7 +57,6 @@ public class FishSpawner : MonoBehaviour
         fish.Init(this, spawn, fishContainer, new Vector2(x, y));
         spawn.SpawnedCount += 1;
         spawn.RespawnTimer = 0f;
-        Debug.Log($"Spawned fish {fish} at {x}, {y}");
     }
 
     public void Update() {
