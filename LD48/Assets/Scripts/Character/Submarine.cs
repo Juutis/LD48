@@ -108,11 +108,19 @@ public class Submarine : MonoBehaviour
         propeller.speed = Mathf.Abs(speed);
         var effect = bubbles.emission;
         effect.rateOverTimeMultiplier = Mathf.Abs(speed) * 10;
+
+        if (transform.position.y > 0)
+        {
+            bubbles.Stop();
+        }
+        else
+        {
+            bubbles.Play();
+        }
     }
 
     void FixedUpdate()
     {
-
         if (transform.position.y > 0)
         {
             rigidBody.gravityScale = 1.0f;
