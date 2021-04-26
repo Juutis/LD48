@@ -69,6 +69,6 @@ public class UIPopup : MonoBehaviour
     {
         Time.timeScale = 1f;
         hiding = false;
-        manager.HideFinished();
+        manager.HideFinished(this);
     }
 }
