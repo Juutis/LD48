@@ -51,13 +51,13 @@ public class WaterEffect : MonoBehaviour
     {
         // hax optimization
         var camera = Camera.main;
-        if (camera.transform.position.y < -20)
+        if (effectEnabled && camera.transform.position.y < -20)
         {
             camera.cullingMask = optimizedLayerMask;
         }
         else
         {
-
+            camera.cullingMask = origLayerMask;
         }
     }
 }
