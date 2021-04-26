@@ -33,10 +33,10 @@ public class UpgradeTicket : MonoBehaviour
         RectTransform rectTransform = GetComponent<RectTransform>();
         float width = rectTransform.sizeDelta.x;
         float newHeight = rectTransform.sizeDelta.y + heightCoef;
-        rectTransform.sizeDelta = new Vector2(width, newHeight);
+        //rectTransform.sizeDelta = new Vector2(width, newHeight);
 
         RectTransform loreTransform = lore.GetComponent<RectTransform>();
-        loreTransform.sizeDelta = new Vector2(loreTransform.sizeDelta.x, loreTransform.sizeDelta.y + heightCoef);
+        //loreTransform.sizeDelta = new Vector2(loreTransform.sizeDelta.x, loreTransform.sizeDelta.y + heightCoef);
         this.price = price;
         this.value = value;
     }
