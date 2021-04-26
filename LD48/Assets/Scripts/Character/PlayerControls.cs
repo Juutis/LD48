@@ -21,6 +21,8 @@ public class PlayerControls : MonoBehaviour
 
     private Hurtable hurtable;
 
+    private bool controlsEnabled = true;
+
     private float shot = 0f;
 
     // Start is called before the first frame update
@@ -36,9 +38,20 @@ public class PlayerControls : MonoBehaviour
         ReadConfig();
     }
 
+    public void EnableControls() {
+        controlsEnabled = true;
+    }
+
+    public void DisableControls() {
+        controlsEnabled = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (!controlsEnabled) {
+            return;
+        }
         submarine.Accelerate(Input.GetAxis("Vertical") * accelerationSpeed * Time.deltaTime);
         submarine.Rotate(Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime);
 

@@ -20,6 +20,7 @@ public class Submarine : MonoBehaviour
 
     private Rigidbody2D rigidBody;
     private Transform rotationTarget;
+    private Quaternion initialRotation;
     private SpriteRenderer renderer;
     private PlayerConfig config;
 
@@ -30,8 +31,15 @@ public class Submarine : MonoBehaviour
     public void Init(Transform rotationTarget, PlayerConfig playerConfig)
     {
         this.rotationTarget = rotationTarget;
+        initialRotation = transform.rotation;
         renderer = rotationTarget.GetComponentInChildren<SpriteRenderer>();
         config = playerConfig;
+    }
+
+    public void Stop() {
+        transform.rotation = initialRotation;
+        rigidBody.velocity = Vector2.zero;
+        speed = 0f;
     }
 
     // Start is called before the first frame update
@@ -39,6 +47,7 @@ public class Submarine : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
     }
+
 
     // Update is called once per frame
     void Update()
