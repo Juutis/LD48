@@ -24,6 +24,9 @@ public class Torpedo : MonoBehaviour
     [SerializeField]
     private ParticleSystem explosion;
 
+    [SerializeField]
+    private ParticleSystem bigExplosion;
+
     private Rigidbody2D rigidBody;
     private Collider2D collider;
     private Renderer renderer;
@@ -34,6 +37,7 @@ public class Torpedo : MonoBehaviour
     private Vector2 direction = Vector2.right;
 
     private bool alive = true;
+    private bool follows = false;
 
     // Start is called before the first frame update
     void Start()
@@ -45,9 +49,18 @@ public class Torpedo : MonoBehaviour
         direction = transform.right;
     }
 
-    public void Instantiate(float damage)
+    public void Instantiate(float damage, bool follows)
     {
         this.damage = damage;
+        this.follows = follows;
+
+        Debug.Log(damage);
+
+        if (damage < 15.0f)
+        {
+            collider = GetComponent<Collider2D>();
+            collider.isTrigger = false;
+        }
     }
 
     // Update is called once per frame
@@ -56,7 +69,7 @@ public class Torpedo : MonoBehaviour
         var mousePosition = Input.mousePosition;
         followTarget = (Vector2)Camera.main.ScreenToWorldPoint(mousePosition);
 
-        if (Time.time - createdTime <= followTime && alive)
+        if (Time.time - createdTime <= followTime && alive && follows)
         {
             float angleDiff = Vector2.SignedAngle(followTarget - transform.position, direction);
             direction = Quaternion.AngleAxis(Mathf.Clamp(angleDiff, -turnSpeed * Time.deltaTime, turnSpeed * Time.deltaTime), Vector3.back) * direction;
@@ -72,8 +85,11 @@ public class Torpedo : MonoBehaviour
             Kill();
         }
 
-        float velocityAngleDiff = Vector2.SignedAngle(rigidBody.velocity, transform.right);
-        transform.Rotate(Vector3.back, velocityAngleDiff);
+        if (alive)
+        {
+            float velocityAngleDiff = Vector2.SignedAngle(rigidBody.velocity, transform.right);
+            transform.Rotate(Vector3.back, velocityAngleDiff);
+        }
     }
 
     private void FixedUpdate()
@@ -86,11 +102,15 @@ public class Torpedo : MonoBehaviour
         }
         else
         {
-            rigidBody.velocity = direction.normalized * speed;
-            rigidBody.gravityScale = 0.0f;
             if (alive)
             {
+                rigidBody.velocity = direction.normalized * speed;
+                rigidBody.gravityScale = 0.0f;
                 particles.Play();
+            }
+            else
+            {
+                rigidBody.gravityScale = 0.2f;
             }
         }
     }
@@ -110,16 +130,45 @@ public class Torpedo : MonoBehaviour
         Kill();
     }
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        var hurtable = collision.gameObject.GetComponent<Hurtable>();
+        if (hurtable != null)
+        {
+            hurtable.Hurt(damage);
+        }
+        var lever = collision.gameObject.GetComponent<Lever>();
+        if (lever != null)
+        {
+            lever.Push();
+        }
+        Kill();
+    }
+
     public void Kill()
     {
         alive = false;
         particles.Stop();
-        var expl = Instantiate(explosion);
-        expl.transform.position = transform.position;
+        if (damage > 25.0f)
+        {
+            var expl = Instantiate(bigExplosion);
+            expl.transform.position = transform.position;
+            renderer.enabled = false;
+            Invoke("ReallyKill", 1.5f);
+        }
+        else if (damage > 15.0f)
+        {
+            var expl = Instantiate(explosion);
+            expl.transform.position = transform.position;
+            renderer.enabled = false;
+            Invoke("ReallyKill", 1.5f);
+        }
+        else
+        {
+            Invoke("ReallyKill", 10.0f);
+        }
         collider.enabled = false;
-        renderer.enabled = false;
         trackingIndicator.SetActive(false);
-        Invoke("ReallyKill", 1.5f);
     }
 
     public void ReallyKill()

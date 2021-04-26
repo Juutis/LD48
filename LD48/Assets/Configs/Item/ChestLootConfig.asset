@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinCoins: 10
   MaxCoins: 10
+  MinHearts: 0
+  MaxHearts: 0

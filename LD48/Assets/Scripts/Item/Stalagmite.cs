@@ -29,7 +29,7 @@ public class Stalagmite : MonoBehaviour
         {
             hurtable.Hurt(-amount);
         }
-        if (amount > 11.0f)
+        if (amount > 21.0f)
         {
             Kill();
         }

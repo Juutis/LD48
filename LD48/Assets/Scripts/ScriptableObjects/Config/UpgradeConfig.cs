@@ -11,6 +11,7 @@ public class UpgradeConfig : ScriptableObject
     public List<Upgrade> movementSpeed;
     public List<Upgrade> lights;
     public List<Upgrade> health;
+    public List<Upgrade> homingTorpedos;
 
     [field:SerializeField]
     public List<DepthDamage> DepthDamages {get; private set;}

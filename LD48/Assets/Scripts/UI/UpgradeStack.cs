@@ -41,6 +41,9 @@ public class UpgradeStack : MonoBehaviour
             case UpgradeType.health:
                 upgrades = config.health;
                 break;
+            case UpgradeType.homingTorpedos:
+                upgrades = config.homingTorpedos;
+                break;
         }
 
         float x = transform.position.x;
@@ -114,5 +117,6 @@ public enum UpgradeType
     attackSpeed,
     movementSpeed,
     lights,
-    health
+    health,
+    homingTorpedos
 }

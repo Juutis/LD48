@@ -13,96 +13,87 @@ MonoBehaviour:
   m_Name: UpgradeConfig
   m_EditorClassIdentifier: 
   damage:
-  - loreText: New torpedo upgrade
-    description: damage +10
-    value: 10
-    price: 100
-  - loreText: Install the torpedo shooter properly
-    description: damage +15
-    value: 15
-    price: 150
+  - loreText: Makeshift warheads
+    description: Install makeshift warheads to torpedoes. The explosion deals increased
+      damage, but won't do much against sturdy objects.
+    value: 20
+    price: 5
   - loreText: Add explosion agent to the torpedo mixture
-    description: damage +25
-    value: 25
-    price: 220
-  - loreText: Add explosion agent to the torpedo mixture asda fsdf
-    description: damage +25
-    value: 35
-    price: 300
-  - loreText: Add explosion agent to the torpedo mixture fgosd ertk werr
-    description: damage +25
-    value: 45
-    price: 370
-  - loreText: "Add explosion agent to the torpedo mixturelaw \xE5per qwp\xE5le wtwt"
-    description: damage +25
-    value: 55
-    price: 430
+    description: Greatly Increase potency of torpedo warheads. The explosion is capable
+      of clearing obstacles blocking your path.
+    value: 30
+    price: 25
   attackSpeed:
-  - loreText: Optimize shooting mechanism
-    description: attack speed +5
-    value: 5
-    price: 150
-  - loreText: Oil the torpedoes
-    description: attack speed +5
-    value: 5
-    price: 200
-  - loreText: Cover everything with teflon
-    description: attack speed +10
+  - loreText: Unclog the torpedo tube
+    description: Torpedoes can be launched at an increased rate.
     value: 10
-    price: 350
+    price: 5
+  - loreText: Oil the torpedo tube
+    description: Torpedoes can be launched at a greatly increased rate.
+    value: 15
+    price: 15
+  - loreText: Cover torpedo tube with teflon
+    description: Torpedoes can be launched at a blazing rate.
+    value: 20
+    price: 30
   movementSpeed:
   - loreText: Fix the engine
-    description: movement speed +5
-    value: 15
-    price: 85
+    description: Increases movement speed
+    value: 2
+    price: 5
   - loreText: Optimize fuel intake
-    description: movement speed +5
-    value: 35
-    price: 125
-  - loreText: Add nitrous
-    description: movement speed +15
-    value: 55
-    price: 300
+    description: Greatly increases movement speed
+    value: 2
+    price: 10
+  - loreText: Add NOS module
+    description: Turn your vessel into a submerged rocket
+    value: 2
+    price: 15
   lights:
-  - loreText: Change the old bulbs
-    description: let's you go deeper
+  - loreText: Install old flashlight
+    description: Grants a small headlight
     value: 1
-    price: 60
-  - loreText: Change to high power leds
-    description: let's you go even deeper
+    price: 5
+  - loreText: Install high power led lights
+    description: Increases headlight effectiveness
     value: 1
-    price: 200
-  - loreText: Add halogen lights
-    description: let's you go derp
+    price: 15
+  - loreText: Install halogen lights
+    description: Greatly increases headlight effectiveness
     value: 1
-    price: 550
+    price: 35
   health:
   - loreText: Fix microfractures in the hull
-    description: health +30
-    value: 30
-    price: 50
-  - loreText: Enforce weak points
-    description: health +50
-    value: 50
-    price: 120
-  - loreText: You know what to do ;)
-    description: health +70
-    value: 70
-    price: 230
+    description: Increases hull strength
+    value: 20
+    price: 10
+  - loreText: Reinforce hull seams
+    description: Greatly increases hull strength
+    value: 20
+    price: 20
+  - loreText: Install military grade hull
+    description: The hull becomes almost indestructible
+    value: 20
+    price: 45
+  homingTorpedos:
+  - loreText: Remote Controlled Torpedoes
+    description: Torpedoes gain tracking
+    value: 1
+    price: 10
   <DepthDamages>k__BackingField:
-  - <HealthBelow>k__BackingField: 30
+  - <HealthBelow>k__BackingField: 41
     <Depth>k__BackingField: 100
     <DamageTaken>k__BackingField: 1
     <DamageInterval>k__BackingField: 2
     <Message>k__BackingField: You're going quite deep. You should fix microfractures
       in the hull to proceed deeper or you'll take damage and eventually crash!
-  - <HealthBelow>k__BackingField: 50
+  - <HealthBelow>k__BackingField: 61
     <Depth>k__BackingField: 200
     <DamageTaken>k__BackingField: 2
     <DamageInterval>k__BackingField: 2
     <Message>k__BackingField: This deep the pressure gets pretty high. You should
       enforce weak points so that your submarine doesn't implode!
-  - <HealthBelow>k__BackingField: 100
+  - <HealthBelow>k__BackingField: 81
     <Depth>k__BackingField: 300
     <DamageTaken>k__BackingField: 5
     <DamageInterval>k__BackingField: 2

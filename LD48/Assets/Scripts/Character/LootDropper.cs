@@ -6,6 +6,8 @@ public class LootDropper : MonoBehaviour
 {
     private LootConfig config;
 
+    private bool dropped = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,11 @@ public class LootDropper : MonoBehaviour
 
     public void DropLoot()
     {
+        if (dropped)
+        {
+            return;
+        }
+
         var coins = Random.Range(config.MinCoins, config.MaxCoins + 1);
         for (var i = 0; i < coins; i++)
         {
@@ -37,5 +44,7 @@ public class LootDropper : MonoBehaviour
             var heart = Prefabs.Get<Heart>();
             heart.transform.position = transform.position;
         }
+
+        dropped = true;
     }
 }

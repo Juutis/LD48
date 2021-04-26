@@ -113,6 +113,11 @@ public class PlayerControls : MonoBehaviour
         submarine.AddLightLevel(Mathf.RoundToInt(value));
     }
 
+    public void EnableHomingTorpedos()
+    {
+        weapon.SetTracking(true);
+    }
+
     public float GetHealth()
     {
         return hurtable.GetHealth();

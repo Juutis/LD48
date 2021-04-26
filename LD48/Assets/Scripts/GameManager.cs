@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private PlayerControls player;
-    private int money = 1000;
+    private int money = 0;
 
     public float PlayerDepth { get { return player.Submarine.Depth; } }
 
@@ -81,6 +81,9 @@ public class GameManager : MonoBehaviour
                 break;
             case UpgradeType.lights:
                 player.UpgradeLights(value);
+                break;
+            case UpgradeType.homingTorpedos:
+                player.EnableHomingTorpedos();
                 break;
             default:
                 Debug.Log("Unknown UpgradeType found! " + type.ToString());
