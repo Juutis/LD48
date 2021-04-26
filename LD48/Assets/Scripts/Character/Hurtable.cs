@@ -56,7 +56,9 @@ public class Hurtable : MonoBehaviour
             {
                 damagedCallback.Invoke(damage);
             }
-            SoundPlayer.main.PlaySound(GameSoundType.SubmarineGetHit);
+            if (tag == "Player") {
+                SoundPlayer.main.PlaySound(GameSoundType.SubmarineGetHit);
+            }
             currentHealth -= damage;
             if (currentHealth <= 0)
             {
@@ -91,7 +93,9 @@ public class Hurtable : MonoBehaviour
     public void Die() {
         if (deadAction != null)
         {
-            SoundPlayer.main.PlaySound(GameSoundType.SubmarineCrash);
+            if (tag == "Player") {
+                SoundPlayer.main.PlaySound(GameSoundType.SubmarineCrash);
+            }
             deadAction.Invoke();
         }
     }
