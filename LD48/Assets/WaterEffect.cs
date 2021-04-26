@@ -18,6 +18,12 @@ public class WaterEffect : MonoBehaviour
     [SerializeField]
     private bool effectEnabled = true;
     public bool Status { get { return effectEnabled; } }
+
+
+    [SerializeField]
+    private LayerMask optimizedLayerMask;
+    private LayerMask origLayerMask;
+
     void Awake()
     {
         renderTexture.width = Screen.width;
@@ -30,6 +36,8 @@ public class WaterEffect : MonoBehaviour
             Camera.main.cullingMask = layerMask.value;
         }
         container.gameObject.SetActive(effectEnabled);
+
+        origLayerMask = Camera.main.cullingMask;
     }
 
     // Update is called once per frame
@@ -37,5 +45,19 @@ public class WaterEffect : MonoBehaviour
     {
         effectEnabled = !effectEnabled;
         container.gameObject.SetActive(effectEnabled);
+    }
+
+    public void Update()
+    {
+        // hax optimization
+        var camera = Camera.main;
+        if (camera.transform.position.y < -20)
+        {
+            camera.cullingMask = optimizedLayerMask;
+        }
+        else
+        {
+
+        }
     }
 }
