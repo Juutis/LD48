@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 1678909509619915394}
   - component: {fileID: 1736552842982210451}
   - component: {fileID: 8753741381975765872}
+  - component: {fileID: 1190004086539196117}
   m_Layer: 7
   m_Name: Stalagmite
   m_TagString: Untagged
@@ -114,6 +115,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6587158531712113289}
+  - {fileID: 2824193222981417325}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -160,6 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthConfig: {fileID: 11400000, guid: 189600fb3db77c740bd19ebb277c68e6, type: 2}
+  destroyEffect: {fileID: 7539763401869980335}
 --- !u!60 &8753741381975765872
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -191,3 +194,91 @@ PolygonCollider2D:
       - {x: -1.3548777, y: -2.2599707}
       - {x: -0.09977174, y: -2.2586124}
       - {x: 1.1354265, y: -2.2298117}
+--- !u!50 &1190004086539196117
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6587158532302988643}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!1001 &361935412268300411
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 6587158532302988642}
+    m_Modifications:
+    - target: {fileID: 2464690085828591894, guid: 2a41572dbeb92c34baee8928de7491b6, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464690085828591894, guid: 2a41572dbeb92c34baee8928de7491b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464690085828591894, guid: 2a41572dbeb92c34baee8928de7491b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464690085828591894, guid: 2a41572dbeb92c34baee8928de7491b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464690085828591894, guid: 2a41572dbeb92c34baee8928de7491b6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464690085828591894, guid: 2a41572dbeb92c34baee8928de7491b6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464690085828591894, guid: 2a41572dbeb92c34baee8928de7491b6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464690085828591894, guid: 2a41572dbeb92c34baee8928de7491b6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464690085828591894, guid: 2a41572dbeb92c34baee8928de7491b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464690085828591894, guid: 2a41572dbeb92c34baee8928de7491b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2464690085828591894, guid: 2a41572dbeb92c34baee8928de7491b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7901359435657874132, guid: 2a41572dbeb92c34baee8928de7491b6, type: 3}
+      propertyPath: m_Name
+      value: StalagmiteDestroy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2a41572dbeb92c34baee8928de7491b6, type: 3}
+--- !u!1 &7539763401869980335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7901359435657874132, guid: 2a41572dbeb92c34baee8928de7491b6, type: 3}
+  m_PrefabInstance: {fileID: 361935412268300411}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2824193222981417325 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2464690085828591894, guid: 2a41572dbeb92c34baee8928de7491b6, type: 3}
+  m_PrefabInstance: {fileID: 361935412268300411}
+  m_PrefabAsset: {fileID: 0}

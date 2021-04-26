@@ -41,6 +41,8 @@ public class Fish : MonoBehaviour
     [SerializeField]
     private ParticleSystem explosionExplosion;
 
+    private Vector2 startPosition;
+
     public void Init(FishSpawner fishSpawner, FishSpawn fishSpawn, Transform parent, Vector2 pos) {
         spawner = fishSpawner;
         spawn = fishSpawn;
@@ -76,6 +78,8 @@ public class Fish : MonoBehaviour
         spriteRenderers = new List<SpriteRenderer>(GetComponentsInChildren<SpriteRenderer>());
         spriteRenderers.AddRange(GetComponents<SpriteRenderer>());
         origColors = spriteRenderers.Select(rend => rend.color).ToList();
+
+        startPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -158,6 +162,11 @@ public class Fish : MonoBehaviour
     public void Move(bool skipRetarget)
     {
         if (state == FishState.EXPLODE)
+        {
+            return;
+        }
+
+        if (config.IsJelly && Vector2.Distance(startPosition, transform.position) > 5.0)
         {
             return;
         }
