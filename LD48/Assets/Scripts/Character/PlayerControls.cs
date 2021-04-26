@@ -24,7 +24,7 @@ public class PlayerControls : MonoBehaviour
 
     private bool controlsEnabled = true;
 
-    private float shot = 0f;
+    private float shot = -10f;
     private bool yAxisInverted = false;
 
     public bool YAxisInverted { get { return yAxisInverted;} }
@@ -72,7 +72,10 @@ public class PlayerControls : MonoBehaviour
         submarine.Rotate(yAxis * rotationSpeed * Time.deltaTime);
 
         float delay = 10f / attackSpeed;
-        if (Input.GetMouseButton(0) && (Time.time - shot > delay))
+        var readyToShoot = Time.time - shot > delay;
+        crosshair.ReadyToShoot = readyToShoot;
+
+        if (readyToShoot && (Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space)))
         {
             if (EventSystem.current.IsPointerOverGameObject()) {
                 return;
