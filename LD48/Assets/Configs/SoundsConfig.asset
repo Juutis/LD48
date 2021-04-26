@@ -20,6 +20,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 121d5e4842a825441a42f1660a64a8fd, type: 3}
     - {fileID: 8300000, guid: f6236f42f4151444bbb4584c661611c6, type: 3}
     <Type>k__BackingField: 1
+    Volume: 1
   - <Clip>k__BackingField: {fileID: 0}
     <Clips>k__BackingField:
     - {fileID: 8300000, guid: 0b1fcde0140b1db489e01ecf95154327, type: 3}
@@ -27,6 +28,38 @@ MonoBehaviour:
     - {fileID: 8300000, guid: e42a538f91409044dba8e064c60677d1, type: 3}
     - {fileID: 8300000, guid: 4e0ea65cf8016fe42b29c5ce3cc03de5, type: 3}
     <Type>k__BackingField: 2
+    Volume: 1
+  - <Clip>k__BackingField: {fileID: 0}
+    <Clips>k__BackingField:
+    - {fileID: 8300000, guid: 64d6e16993aede642bc3f491d57a9222, type: 3}
+    - {fileID: 8300000, guid: f165b9a00c830a545bf12700dfbbc21a, type: 3}
+    <Type>k__BackingField: 3
+    Volume: 1
+  - <Clip>k__BackingField: {fileID: 0}
+    <Clips>k__BackingField:
+    - {fileID: 8300000, guid: 52898782bafa94343acf4ff342db373d, type: 3}
+    - {fileID: 8300000, guid: f92435862766848498a6368128135f59, type: 3}
+    - {fileID: 8300000, guid: aa7d0ca21b2fbf44db70533a522c6adb, type: 3}
+    <Type>k__BackingField: 4
+    Volume: 0.88
+  - <Clip>k__BackingField: {fileID: 0}
+    <Clips>k__BackingField:
+    - {fileID: 8300000, guid: f178e7788b928e540be6f434dd429d67, type: 3}
+    - {fileID: 8300000, guid: 79271e4a5995aa14fae6c45d4b1a33cd, type: 3}
+    - {fileID: 8300000, guid: a1ced70d37c9be54896dcda26b86f17f, type: 3}
+    - {fileID: 8300000, guid: ef9dd90361c2c1645af692868271f497, type: 3}
+    <Type>k__BackingField: 5
+    Volume: 0.7
+  - <Clip>k__BackingField: {fileID: 0}
+    <Clips>k__BackingField:
+    - {fileID: 8300000, guid: 8266e019b637e7b49a51a7b193816a7b, type: 3}
+    <Type>k__BackingField: 6
+    Volume: 0.61
+  - <Clip>k__BackingField: {fileID: 0}
+    <Clips>k__BackingField:
+    - {fileID: 8300000, guid: 5ac89578af0c48d408ee90ef2aa5ba53, type: 3}
+    <Type>k__BackingField: 7
+    Volume: 0.49
   depthSounds:
   - <Clips>k__BackingField:
     - {fileID: 8300000, guid: fd221ba8aaf3da643924c3243e3045ba, type: 3}
@@ -38,8 +71,8 @@ MonoBehaviour:
     <DepthMax>k__BackingField: 200
     <Interval>k__BackingField: 10
     <Chance>k__BackingField: 0.613
-    PlayedPreviously: 102.148315
-    Timer: 7.4352145
+    PlayedPreviously: 0
+    Timer: 0
   - <Clips>k__BackingField:
     - {fileID: 8300000, guid: 67aa966686775004caf0a0d886ce8811, type: 3}
     - {fileID: 8300000, guid: 0f9d9c9c7955f1c4989dd9e512f15a80, type: 3}
@@ -48,8 +81,8 @@ MonoBehaviour:
     <DepthMax>k__BackingField: 300
     <Interval>k__BackingField: 10
     <Chance>k__BackingField: 0.626
-    PlayedPreviously: 299.77194
-    Timer: 3.0541766
+    PlayedPreviously: 0
+    Timer: 0
   - <Clips>k__BackingField:
     - {fileID: 8300000, guid: e42a538f91409044dba8e064c60677d1, type: 3}
     - {fileID: 8300000, guid: 32472ce7664f7b44a97d1c9e1a09e2ac, type: 3}
@@ -57,5 +90,5 @@ MonoBehaviour:
     <DepthMax>k__BackingField: 400
     <Interval>k__BackingField: 10
     <Chance>k__BackingField: 0.609
-    PlayedPreviously: 299.77194
-    Timer: 3.0541766
+    PlayedPreviously: 0
+    Timer: 0

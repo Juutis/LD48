@@ -411,7 +411,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ffc52519517909a43b8eacb30df2f661, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fcbeca763d05c0a45b911358b14a31ba, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.385
   m_Pitch: 1
@@ -955,7 +955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enabled: 1
-  pitchFactor: 0.1
+  pitchFactor: 0.15
   audioSource: {fileID: 4683417340172983308}
   underWaterSoundAudioSource: {fileID: 3498493946762735046}
   maxUnderGroundVolume: 0.8

@@ -9,11 +9,15 @@ public class GameSoundSource : MonoBehaviour
 
     public AudioClip Clip {get; private set;}
 
-    public void Init(AudioClip clip) {
+    private float customVolume = 1f;
+
+    public void Init(AudioClip clip, float volume = 1f) {
         Clip = clip;
         AudioSource source = Prefabs.Get<AudioSource>();
         source.clip = clip;
+        source.volume = volume;
         source.transform.SetParent(transform);
+        customVolume = volume;
         audioSources.Add(source);
     }
 
@@ -23,6 +27,7 @@ public class GameSoundSource : MonoBehaviour
             source = Prefabs.Get<AudioSource>();
             source.transform.SetParent(transform);
             source.clip = Clip;
+            source.volume = customVolume;
             audioSources.Add(source);
         }
         source.Play();
