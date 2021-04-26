@@ -7,10 +7,22 @@ public class HeartOfKraken : MonoBehaviour
     [SerializeField]
     private HealthConfig healthConfig;
 
+    [SerializeField]
+    private ParticleSystem poison;
+
+    [SerializeField]
+    private GameObject dieEffect;
+
+    [SerializeField]
+    private GameObject gfx;
+
+    private Collider2D coll;
+
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<Hurtable>().Initialize(healthConfig);
+        coll = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -20,6 +32,15 @@ public class HeartOfKraken : MonoBehaviour
     }
 
     public void Kill()
+    {
+        dieEffect.SetActive(true);
+        gfx.SetActive(false);
+        poison.Stop();
+        coll.enabled = false;
+        Invoke("ReallyKill", 10.0f);
+    }
+
+    public void ReallyKill()
     {
         Destroy(gameObject);
     }
