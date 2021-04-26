@@ -974,6 +974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeConfig: {fileID: 11400000, guid: 6439332a827a93742b82916f3fa7ec09, type: 2}
   playerHurtable: {fileID: 1563377483740766491}
+  breakingSound: 2
 --- !u!114 &7620658730855357325
 MonoBehaviour:
   m_ObjectHideFlags: 0
