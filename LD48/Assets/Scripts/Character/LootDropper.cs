@@ -32,7 +32,6 @@ public class LootDropper : MonoBehaviour
         }
 
         var coins = Random.Range(config.MinCoins, config.MaxCoins + 1);
-        Debug.Log("Dropping coins: " + coins);
         for (var i = 0; i < coins; i++)
         {
             var coin = Prefabs.Get<Coin>();
