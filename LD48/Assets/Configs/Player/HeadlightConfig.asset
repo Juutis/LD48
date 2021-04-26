@@ -16,10 +16,10 @@ MonoBehaviour:
   - innerSpotAngle: 66
     outerSpotAngle: 100
     innerRadius: 5
-    outerRadius: 10
+    outerRadius: 8
     intensity: 1
   - innerSpotAngle: 70
-    outerSpotAngle: 130
+    outerSpotAngle: 120
     innerRadius: 10
     outerRadius: 20
     intensity: 1
