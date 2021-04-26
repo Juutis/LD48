@@ -52,7 +52,7 @@ public class UpgradeStack : MonoBehaviour
         foreach (Upgrade u in upgrades.AsEnumerable().Reverse())
         {
             GameObject upgradeTicket = Instantiate(upgradeTicketPrefab);
-            upgradeTicket.transform.parent = transform;
+            upgradeTicket.transform.SetParent(transform, false);
 
             upgradeTicket.transform.position = new Vector3(x, y, 0);
             // set offset for the next ticket

@@ -574,6 +574,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2366608929234233833, guid: 3719ceba4fd016b4db0cec4ea7985a2c, type: 3}
   m_PrefabInstance: {fileID: 2780818620619859552}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &267486110310323568 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2675488916050768656, guid: 3719ceba4fd016b4db0cec4ea7985a2c, type: 3}
+  m_PrefabInstance: {fileID: 2780818620619859552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365f1a6157d2a4d409a15556a5411f66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2857335731100396794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -811,6 +822,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6493127047352183066}
     m_Modifications:
+    - target: {fileID: 543760143657454796, guid: 4dc86120788a5e54896a35dec05cc2bd, type: 3}
+      propertyPath: config
+      value: 
+      objectReference: {fileID: 11400000, guid: 6439332a827a93742b82916f3fa7ec09, type: 2}
+    - target: {fileID: 543760143657454796, guid: 4dc86120788a5e54896a35dec05cc2bd, type: 3}
+      propertyPath: pressure_indicator_green
+      value: 
+      objectReference: {fileID: 5931712765974358493}
+    - target: {fileID: 543760143657454796, guid: 4dc86120788a5e54896a35dec05cc2bd, type: 3}
+      propertyPath: pressure_indicator_yellow
+      value: 
+      objectReference: {fileID: 5931712766896269624}
     - target: {fileID: 543760143657454803, guid: 4dc86120788a5e54896a35dec05cc2bd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -901,6 +924,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dc86120788a5e54896a35dec05cc2bd, type: 3}
+--- !u!1 &5931712766896269624 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 543760143513849818, guid: 4dc86120788a5e54896a35dec05cc2bd, type: 3}
+  m_PrefabInstance: {fileID: 6186397420388673250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5931712765974358493 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 543760142825803583, guid: 4dc86120788a5e54896a35dec05cc2bd, type: 3}
+  m_PrefabInstance: {fileID: 6186397420388673250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5931712766755678769 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 543760143657454803, guid: 4dc86120788a5e54896a35dec05cc2bd, type: 3}
@@ -1001,6 +1034,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIPopupManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6688362939089483727, guid: 260db6e77169cd94eb280ba0dd46a600, type: 3}
+      propertyPath: upgradeUI
+      value: 
+      objectReference: {fileID: 267486110310323568}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 260db6e77169cd94eb280ba0dd46a600, type: 3}
 --- !u!224 &8450515070812726122 stripped
