@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8e1308a1d7d1f0438ebc756657f5a24, type: 3}
   m_Name: AnglerfishHealthConfig
   m_EditorClassIdentifier: 
-  MaxHealth: 20
+  MaxHealth: 25
   DamageTintColor: {r: 1, g: 0, b: 0, a: 1}
   InvulnerabilityDuration: 0
   DamageTintDuration: 1

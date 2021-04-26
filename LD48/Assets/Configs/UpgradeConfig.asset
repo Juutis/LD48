@@ -26,15 +26,15 @@ MonoBehaviour:
   attackSpeed:
   - loreText: Optimize shooting mechanism
     description: attack speed +5
-    value: 5
+    value: 10
     price: 150
   - loreText: Oil the torpedoes
     description: attack speed +5
-    value: 5
+    value: 15
     price: 200
   - loreText: Cover everything with teflon
     description: attack speed +10
-    value: 10
+    value: 20
     price: 350
   movementSpeed:
   - loreText: Fix the engine
