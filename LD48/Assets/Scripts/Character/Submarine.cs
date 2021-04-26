@@ -167,4 +167,9 @@ public class Submarine : MonoBehaviour
     {
         lightLevel += value;
     }
+
+    public float GetHeadlight()
+    {
+        return lightLevel;
+    }
 }

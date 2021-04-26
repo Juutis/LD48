@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private PlayerControls player;
-    private int money = 10000;
+    private int money = 0;
 
     public float PlayerDepth { get { return player.Submarine.Depth; } }
 
@@ -70,6 +70,11 @@ public class GameManager : MonoBehaviour
     public void AddMoney(int amount)
     {
         money += amount;
+    }
+
+    public float GetHeadlight()
+    {
+        return player.GetHeadlight();
     }
 
     public void Upgrade(float value, UpgradeType type)

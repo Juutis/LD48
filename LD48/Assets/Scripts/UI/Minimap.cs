@@ -38,7 +38,13 @@ public class Minimap : MonoBehaviour
             int x = Mathf.RoundToInt(playerPos.x*1.72f) + 512 + 48;
             int y = Mathf.RoundToInt(playerPos.y*1.72f) + 512 + 48;
 
-            runtimeTex = DrawCircle(runtimeTex, Color.clear, x, y, 30);
+            int fogRemoveRadius = 20;
+            if (GameManager.main.GetHeadlight() > 1)
+            {
+                fogRemoveRadius = 30;
+            }
+
+            runtimeTex = DrawCircle(runtimeTex, Color.clear, x, y, fogRemoveRadius);
             runtimeTex.Apply();
             rawImage.texture = runtimeTex;
             Rect uv = rawImage.uvRect;
