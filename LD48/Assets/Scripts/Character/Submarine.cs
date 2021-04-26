@@ -9,6 +9,8 @@ public class Submarine : MonoBehaviour
     private Animator propeller;
     [SerializeField]
     private Light2D headlight;
+    [SerializeField]
+    private GameObject headlightObject;
 
     private float maxSpeed = 8.0f;
     private float minSpeed = -4.0f;
@@ -16,7 +18,9 @@ public class Submarine : MonoBehaviour
 
     private Vector2 direction = Vector2.right;
     private float speed;
-    private float lightLevel = 0;
+
+    [SerializeField]
+    private int lightLevel = 0;
 
     private Rigidbody2D rigidBody;
     private Transform rotationTarget;
@@ -79,9 +83,18 @@ public class Submarine : MonoBehaviour
             speed = 0.0f;
         }
 
-        if (headlight != null && config.HeadlightConfig != null && config.HeadlightConfig.headlightLevels.Count > 0)
+        if (lightLevel == 0)
         {
-            HeadlightLevel lightLevelObj = config.HeadlightConfig.headlightLevels[(int)lightLevel];
+            headlightObject.SetActive(false);
+        }
+        else
+        {
+            headlightObject.SetActive(true);
+        }
+
+        if (headlight != null && config.HeadlightConfig != null && config.HeadlightConfig.headlightLevels.Count > 0 && lightLevel > 0)
+        {
+            HeadlightLevel lightLevelObj = config.HeadlightConfig.headlightLevels[lightLevel-1];
             headlight.intensity = lightLevelObj.intensity;
             headlight.pointLightInnerAngle = lightLevelObj.innerSpotAngle;
             headlight.pointLightOuterAngle = lightLevelObj.outerSpotAngle;
@@ -137,7 +150,7 @@ public class Submarine : MonoBehaviour
         maxSpeed += value;
     }
 
-    public void AddLightLevel(float value)
+    public void AddLightLevel(int value)
     {
         lightLevel += value;
     }

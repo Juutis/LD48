@@ -13,18 +13,18 @@ MonoBehaviour:
   m_Name: HeadlightConfig
   m_EditorClassIdentifier: 
   headlightLevels:
-  - innerSpotAngle: 60
-    outerSpotAngle: 108
-    innerRadius: 1.060431
-    outerRadius: 10
-    intensity: 0
-  - innerSpotAngle: 60
-    outerSpotAngle: 130
-    innerRadius: 1.060431
-    outerRadius: 10
+  - innerSpotAngle: 66
+    outerSpotAngle: 100
+    innerRadius: 5
+    outerRadius: 8
     intensity: 1
-  - innerSpotAngle: 80
-    outerSpotAngle: 130
-    innerRadius: 2
-    outerRadius: 15
+  - innerSpotAngle: 70
+    outerSpotAngle: 120
+    innerRadius: 10
+    outerRadius: 20
+    intensity: 1
+  - innerSpotAngle: 120
+    outerSpotAngle: 180
+    innerRadius: 12.5
+    outerRadius: 25
     intensity: 1
