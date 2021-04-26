@@ -8,6 +8,7 @@ public delegate void DoneCallback();
 
 public class UIFullscreenFade : MonoBehaviour
 {
+    [SerializeField]
     private Image imgFade;
 
     [SerializeField]
@@ -33,11 +34,6 @@ public class UIFullscreenFade : MonoBehaviour
 
     float duration;
     UnityAction currentCallback;
-
-    void Start()
-    {
-        imgFade = GetComponent<Image>();
-    }
 
     public void FadeIn(UnityAction callback) {
         currentCallback = callback;

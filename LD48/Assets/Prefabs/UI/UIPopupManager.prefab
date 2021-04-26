@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionsButton: {fileID: 6059370110247767237}
+  upgradeUI: {fileID: 0}
   fader: {fileID: 7471439396837183298}
 --- !u!1 &6059370110247767237
 GameObject:
@@ -522,6 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aeae92f5a3b233b4f8fbe4caf192c05f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imgFade: {fileID: 1012689179602828566}
   fadeInDuration: 0.5
   fadeInColor: {r: 0, g: 0, b: 0, a: 1}
   fadeOutDuration: 0.5

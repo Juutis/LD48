@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
 
     public static GameManager main;
 
+
+    public bool FirstHitNormal = true;
+    public bool FirstHitMedium = true;
+
     private void Awake() {
         main = this;
     }
@@ -18,8 +22,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //UIPopupManager.main.ShowPopup("Hi", "Who are you?");
         player = FindObjectOfType<PlayerControls>();
+        UIPopupManager.main.ShowPopup(
+            "Murky mess",
+            "You are a small-time submarine enterpreneur. " +
+            "Recently the waters have become more and more dangerous and the locals are scared of going into the water. "+
+            "You are at risk of going bankrupt as no customers wish to board your vessel, " +
+            "so you decide to get to the bottom of this troubling situation..."
+        );
     }
 
     // Update is called once per frame

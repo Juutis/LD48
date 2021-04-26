@@ -20,10 +20,11 @@ public class UIPopupManager : MonoBehaviour
         }
     }
 
+    [SerializeField]
     UpgradeUI upgradeUI;
 
     void Start() {
-        upgradeUI = GameObject.FindObjectOfType<UpgradeUI>();
+        //upgradeUI = GameObject.FindObjectOfType<UpgradeUI>();
     }
 
     private bool PauseMenuCanBeOpened = true;

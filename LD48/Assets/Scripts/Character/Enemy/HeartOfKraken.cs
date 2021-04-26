@@ -21,6 +21,12 @@ public class HeartOfKraken : MonoBehaviour
 
     public void Kill()
     {
+        UIPopupManager.main.ShowPopup(
+            "The Heart of Kraken",
+            "It was the Heart of Kraken! That's what was causing the fish to attack the locals." +
+            "You managed to destroy it with a well placed torpedo.\n\n" +
+            "Thank for playing Fathomous, a game made for Ludum Dare 48!"
+        );
         Destroy(gameObject);
     }
 }
