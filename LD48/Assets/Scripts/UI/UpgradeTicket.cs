@@ -10,8 +10,8 @@ public class UpgradeTicket : MonoBehaviour
     Text lore;
     [SerializeField]
     Text description;
-    [SerializeField]
-    Text descriptionShadow;
+    //[SerializeField]
+    //Text descriptionShadow;
     [SerializeField]
     Text priceUI;
 
@@ -22,7 +22,7 @@ public class UpgradeTicket : MonoBehaviour
     {
         lore.text = loreText;
         description.text = descriptionText;
-        descriptionShadow.text = descriptionText;
+        //descriptionShadow.text = descriptionText;
         string specifier = "C";
         CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
         priceUI.text = price.ToString(specifier, culture);
