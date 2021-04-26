@@ -32,19 +32,31 @@ public class UpgradeUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        openButton.SetActive(!open);
-        upgradeUI.SetActive(open);
         moneyText.text = string.Format("{0:D6}", GetMoney());
+    }
+
+    public void HideToggle() {
+        openButton.SetActive(false);
+    }
+
+    public void ShowToggle() {
+        openButton.SetActive(true);
     }
 
     public void Close()
     {
+        Time.timeScale = 1f;
         open = false;
+        upgradeUI.SetActive(open);
+        openButton.SetActive(!open);
     }
 
     public void Open()
     {
+        Time.timeScale = 0f;
         open = true;
+        upgradeUI.SetActive(open);
+        openButton.SetActive(!open);
     }
 
     public int GetMoney()

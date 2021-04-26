@@ -16,6 +16,12 @@ public class UIPopupManager : MonoBehaviour
         }
     }
 
+    UpgradeUI upgradeUI;
+
+    void Start() {
+        upgradeUI = GameObject.FindObjectOfType<UpgradeUI>();
+    }
+
     private Transform popupContainer;
 
     [SerializeField]
@@ -27,6 +33,7 @@ public class UIPopupManager : MonoBehaviour
     private UnityAction afterFadeOut;
 
     public void ShowPopup(string title, string message) {
+        upgradeUI.HideToggle();
         fader.FadeIn(delegate {
             UIPopup uiPopup = Prefabs.Get<UIPopup>();
             uiPopup.Init(popupContainer, this);
@@ -34,6 +41,7 @@ public class UIPopupManager : MonoBehaviour
         });
     }
     public void ShowPopup(string title, string message, UnityAction afterFadeInCallback, UnityAction afterFadeOutCallback) {
+        upgradeUI.HideToggle();
         afterFadeOut = afterFadeOutCallback;
         fader.FadeIn(delegate {
             UIPopup uiPopup = Prefabs.Get<UIPopup>();
@@ -51,6 +59,7 @@ public class UIPopupManager : MonoBehaviour
                 afterFadeOut.Invoke();
                 afterFadeOut = null;
             }
+            upgradeUI.ShowToggle();
         });
     }
 }

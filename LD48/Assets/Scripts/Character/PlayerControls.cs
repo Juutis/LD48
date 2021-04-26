@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Hurtable))]
 public class PlayerControls : MonoBehaviour
@@ -58,6 +59,9 @@ public class PlayerControls : MonoBehaviour
         float delay = 10f / attackSpeed;
         if (Input.GetMouseButton(0) && (Time.time - shot > delay))
         {
+            if (EventSystem.current.IsPointerOverGameObject()) {
+                return;
+            }
             if (weapon != null)
             {
                 weapon.Shoot(transform, submarine.GetRotation(), damage);
