@@ -81,19 +81,19 @@ MonoBehaviour:
     value: 1
     price: 10
   <DepthDamages>k__BackingField:
-  - <HealthBelow>k__BackingField: 60
+  - <HealthBelow>k__BackingField: 41
     <Depth>k__BackingField: 100
     <DamageTaken>k__BackingField: 1
     <DamageInterval>k__BackingField: 2
     <Message>k__BackingField: You're going quite deep. You should fix microfractures
       in the hull to proceed deeper or you'll take damage and eventually crash!
-  - <HealthBelow>k__BackingField: 80
+  - <HealthBelow>k__BackingField: 61
     <Depth>k__BackingField: 200
     <DamageTaken>k__BackingField: 2
     <DamageInterval>k__BackingField: 2
     <Message>k__BackingField: This deep the pressure gets pretty high. You should
       enforce weak points so that your submarine doesn't implode!
-  - <HealthBelow>k__BackingField: 110
+  - <HealthBelow>k__BackingField: 81
     <Depth>k__BackingField: 300
     <DamageTaken>k__BackingField: 5
     <DamageInterval>k__BackingField: 2
