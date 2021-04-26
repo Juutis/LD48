@@ -69,7 +69,7 @@ public class UIPopupManager : MonoBehaviour
         });
     }
     public void ShowPopup(string title, string message, UnityAction afterFadeInCallback, UnityAction afterFadeOutCallback) {
-        if (canShowPopup) {
+        if (!canShowPopup) {
             return;
         }
         PauseMenuCanBeOpened = false;
@@ -103,7 +103,8 @@ public class UIPopupManager : MonoBehaviour
         });
     }
 
-    public void HideFinished() {
+    public void HideFinished(UIPopup popup) {
+        Destroy(popup.gameObject);
         if (currentPauseMenu != null) {
             Destroy(currentPauseMenu.gameObject);
             currentPauseMenu = null;
