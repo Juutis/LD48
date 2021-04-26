@@ -19,13 +19,13 @@ MonoBehaviour:
   MinDelayBetweenMoving: 0
   MaxDelayBetweenMoving: 0
   ChangeDirectionChance: 0.25
-  DamageOnTouch: 1
+  DamageOnTouch: 10
   IsAggressive: 0
   AggroRange: 10
   AnimationSpeed: 1
   AggroSpeedScaling: 2
   ExplodeTriggerDistance: 5
-  ExplodeDamage: 3
+  ExplodeDamage: 15
   ExplodeRadius: 5
   ExplodeDelay: 2
   ExplodeTintColor: {r: 0, g: 0, b: 0, a: 1}
