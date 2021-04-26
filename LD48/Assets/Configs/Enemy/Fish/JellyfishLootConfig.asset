@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb1b6333d6052344dae297875924d238, type: 3}
-  m_Name: RedFishLootConfig
+  m_Name: JellyfishLootConfig
   m_EditorClassIdentifier: 
-  MinCoins: -1
+  MinCoins: 1
   MaxCoins: 1
-  MinHearts: -5
+  MinHearts: -10
   MaxHearts: 1

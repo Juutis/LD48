@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddce6211b1bc93428742b68e0388e7a, type: 3}
   m_Name: SharkConfig
   m_EditorClassIdentifier: 
-  HealthConfig: {fileID: 11400000, guid: 3a41c676c21f7084a9316b80c34a2c58, type: 2}
-  LootConfig: {fileID: 11400000, guid: 2e2b7cd274d13ed42b0c3440612068d2, type: 2}
+  HealthConfig: {fileID: 11400000, guid: e071280b84566f845b678b8acbd543be, type: 2}
+  LootConfig: {fileID: 11400000, guid: d936b37882ba5c0488ab97ff92e462f6, type: 2}
+  IsJelly: 0
   MoveSpeed: 5
+  MinDelayBetweenMoving: 0
+  MaxDelayBetweenMoving: 0
   ChangeDirectionChance: 0.15
   DamageOnTouch: 1
   IsAggressive: 1
   AggroRange: 10
-  AggroSpeedScaling: 2
+  AnimationSpeed: 1
+  AggroSpeedScaling: 1.5

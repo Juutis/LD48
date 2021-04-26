@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddce6211b1bc93428742b68e0388e7a, type: 3}
   m_Name: AnglerfishConfig
   m_EditorClassIdentifier: 
-  HealthConfig: {fileID: 11400000, guid: 3a41c676c21f7084a9316b80c34a2c58, type: 2}
-  LootConfig: {fileID: 11400000, guid: 2e2b7cd274d13ed42b0c3440612068d2, type: 2}
+  HealthConfig: {fileID: 11400000, guid: 8861a651cfb40fa45ad3c162d87cb37f, type: 2}
+  LootConfig: {fileID: 11400000, guid: 554296e37481a6046bc8ea19756a5262, type: 2}
   IsJelly: 0
   MoveSpeed: 3
   MinDelayBetweenMoving: 0
@@ -22,4 +22,5 @@ MonoBehaviour:
   DamageOnTouch: 1
   IsAggressive: 0
   AggroRange: 10
+  AnimationSpeed: 1
   AggroSpeedScaling: 2

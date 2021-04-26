@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb1b6333d6052344dae297875924d238, type: 3}
-  m_Name: RedFishLootConfig
+  m_Script: {fileID: 11500000, guid: c8e1308a1d7d1f0438ebc756657f5a24, type: 3}
+  m_Name: JellyfishHealthConfig
   m_EditorClassIdentifier: 
-  MinCoins: -1
-  MaxCoins: 1
-  MinHearts: -5
-  MaxHearts: 1
+  MaxHealth: 10
+  DamageTintColor: {r: 1, g: 0, b: 0, a: 1}
+  InvulnerabilityDuration: 0
+  DamageTintDuration: 1
