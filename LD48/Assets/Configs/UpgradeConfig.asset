@@ -38,15 +38,15 @@ MonoBehaviour:
     price: 30
   movementSpeed:
   - loreText: Fix the engine
-    description: Increases movement speed
+    description: Increases movement speed.
     value: 2
     price: 5
   - loreText: Optimize fuel intake
-    description: Greatly increases movement speed
+    description: Greatly increases movement speed.
     value: 2
     price: 10
   - loreText: Add NOS module
-    description: Turn your vessel into a submerged rocket
+    description: Turn your vessel into a submerged rocket.
     value: 2
     price: 15
   lights:
@@ -59,25 +59,25 @@ MonoBehaviour:
     value: 1
     price: 15
   - loreText: Install halogen lights
-    description: Greatly increases headlight effectiveness
+    description: Greatly increases headlight effectiveness.
     value: 1
     price: 35
   health:
   - loreText: Fix microfractures in the hull
-    description: Increases hull strength
+    description: Increases hull strength.
     value: 20
     price: 10
   - loreText: Reinforce hull seams
-    description: Greatly increases hull strength
+    description: Greatly increases hull strength.
     value: 20
     price: 20
   - loreText: Install military grade hull
-    description: The hull becomes almost indestructible
+    description: The hull becomes almost indestructible.
     value: 20
     price: 45
   homingTorpedos:
   - loreText: Remote Controlled Torpedoes
-    description: Torpedoes gain tracking
+    description: Torpedoes gain tracking.
     value: 1
     price: 10
   <DepthDamages>k__BackingField:

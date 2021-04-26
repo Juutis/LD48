@@ -52,14 +52,14 @@ TagManager:
   - name: Terrain
     uniqueID: 614648259
     locked: 0
+  - name: Effects
+    uniqueID: 1050335325
+    locked: 0
   - name: WaterEffectSortingLayer
     uniqueID: 1243319497
     locked: 0
   - name: WaterBorderSortingLayer
     uniqueID: 874201823
-    locked: 0
-  - name: Effects
-    uniqueID: 1050335325
     locked: 0
   - name: UI
     uniqueID: 239858875
