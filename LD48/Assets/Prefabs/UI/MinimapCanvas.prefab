@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18473ca77d7ff5418b60e6db0727dba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fogTex: {fileID: 2800000, guid: 8c5d6b26051a1cf44a99e6e80df5fadd, type: 3}
+  fogTex: {fileID: 2800000, guid: 1c43f47bf5bba854b82245b51e7a572b, type: 3}
   rawImage: {fileID: 7016156496710326864}
   mainCamera: {fileID: 0}
 --- !u!1 &7016156496710326866
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 8c5d6b26051a1cf44a99e6e80df5fadd, type: 3}
+  m_Texture: {fileID: 2800000, guid: 1c43f47bf5bba854b82245b51e7a572b, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0.5
