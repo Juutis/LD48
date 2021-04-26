@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6587158531712113289}
   - component: {fileID: 6587158531712113290}
-  m_Layer: 10
+  m_Layer: 7
   m_Name: stalagmite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6587158532302988642}
   - component: {fileID: 2294577297685798094}
-  m_Layer: 10
+  - component: {fileID: 1678909509619915394}
+  - component: {fileID: 1736552842982210451}
+  m_Layer: 7
   m_Name: Stalagmite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,3 +143,46 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1339607, y: 5.02976}
   m_EdgeRadius: 0
+--- !u!114 &1678909509619915394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6587158532302988643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67fcfa6e3c990164f864a53c84fe2190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damagedCallback:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1736552842982210451}
+        m_TargetAssemblyTypeName: Stalagmite, Assembly-CSharp
+        m_MethodName: Damaged
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  deadAction:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1736552842982210451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6587158532302988643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2353d830a7daf454facb189fac6dea3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthConfig: {fileID: 11400000, guid: 189600fb3db77c740bd19ebb277c68e6, type: 2}
