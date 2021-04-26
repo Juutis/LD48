@@ -26,6 +26,8 @@ public class PlayerControls : MonoBehaviour
 
     private float shot = 0f;
 
+    private FollowMouse crosshair;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +39,8 @@ public class PlayerControls : MonoBehaviour
         hurtable = GetComponent<Hurtable>();
         hurtable.Initialize(config.HealthConfig);
         ReadConfig();
+
+        crosshair = GetComponentInChildren<FollowMouse>();
     }
 
     public void EnableControls() {
@@ -105,6 +109,7 @@ public class PlayerControls : MonoBehaviour
     public void EnableHomingTorpedos()
     {
         weapon.SetTracking(true);
+        crosshair.Follow = true;
     }
 
     public float GetHealth()
