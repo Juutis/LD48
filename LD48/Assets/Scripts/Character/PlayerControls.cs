@@ -82,7 +82,7 @@ public class PlayerControls : MonoBehaviour
 
     public void UpgradeLights(float value)
     {
-        submarine.AddLightLevel(value);
+        submarine.AddLightLevel(Mathf.RoundToInt(value));
     }
 
     public float GetHealth()
