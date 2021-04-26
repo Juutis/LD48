@@ -22,6 +22,9 @@ public class Submarine : MonoBehaviour
     [SerializeField]
     private int lightLevel = 0;
 
+    [SerializeField]
+    private ParticleSystem bubbles;
+
     private Rigidbody2D rigidBody;
     private Transform rotationTarget;
     private Quaternion initialRotation;
@@ -101,8 +104,10 @@ public class Submarine : MonoBehaviour
             headlight.pointLightInnerRadius = lightLevelObj.innerRadius;
             headlight.pointLightOuterRadius = lightLevelObj.outerRadius;
         }
-
+        
         propeller.speed = Mathf.Abs(speed);
+        var effect = bubbles.emission;
+        effect.rateOverTimeMultiplier = Mathf.Abs(speed) * 10;
     }
 
     void FixedUpdate()
