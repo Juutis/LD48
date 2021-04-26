@@ -49,6 +49,7 @@ public class UpgradeUI : MonoBehaviour
         open = false;
         upgradeUI.SetActive(open);
         openButton.SetActive(!open);
+        UIPopupManager.main.UpgradeUIWasClosed();
     }
 
     public void Open()
@@ -57,6 +58,7 @@ public class UpgradeUI : MonoBehaviour
         open = true;
         upgradeUI.SetActive(open);
         openButton.SetActive(!open);
+        UIPopupManager.main.UpgradeUIWasOpened();
     }
 
     public int GetMoney()

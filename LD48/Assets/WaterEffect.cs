@@ -11,20 +11,31 @@ public class WaterEffect : MonoBehaviour
 
     [SerializeField]
     private RenderTexture renderTexture;
-    void Awake() {
+
+    [SerializeField]
+    private Transform container;
+
+    [SerializeField]
+    private bool effectEnabled = true;
+    public bool Status { get { return effectEnabled; } }
+    void Awake()
+    {
         renderTexture.width = Screen.width;
         renderTexture.height = Screen.height;
     }
     void Start()
     {
-        if (SetMainCameraLayerMask) {
+        if (SetMainCameraLayerMask)
+        {
             Camera.main.cullingMask = layerMask.value;
         }
+        container.gameObject.SetActive(effectEnabled);
     }
 
     // Update is called once per frame
-    void Update()
+    public void Toggle()
     {
-        
+        effectEnabled = !effectEnabled;
+        container.gameObject.SetActive(effectEnabled);
     }
 }
