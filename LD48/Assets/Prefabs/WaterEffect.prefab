@@ -453,6 +453,10 @@ MonoBehaviour:
   renderMaterial: {fileID: 2100000, guid: 0582d953debf68540941bc20bbf81acc, type: 2}
   container: {fileID: 6618499884248468540}
   effectEnabled: 1
+  effectMask: {fileID: 2720787891025293435}
+  borderEffect: {fileID: 2891508082435000730}
+  spriteScalers:
+  - {fileID: 6769827833045444489}
   optimizedLayerMask:
     serializedVersion: 2
     m_Bits: 2080

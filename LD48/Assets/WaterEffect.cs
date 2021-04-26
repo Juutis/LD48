@@ -26,6 +26,13 @@ public class WaterEffect : MonoBehaviour
     private bool effectEnabled = true;
     public bool Status { get { return effectEnabled; } }
 
+    [SerializeField]
+    public WaterEffectMask effectMask;
+    [SerializeField]
+    public WaterBorderEffect borderEffect;
+
+    [SerializeField]
+    private List<SpriteScaler> spriteScalers;
 
     [SerializeField]
     private LayerMask optimizedLayerMask;
@@ -86,6 +93,11 @@ public class WaterEffect : MonoBehaviour
             currentRenderTexture.width = newScreenWidth;
             renderCamera.targetTexture = currentRenderTexture;
             renderMaterial.SetTexture("_rt", currentRenderTexture);
+            foreach(SpriteScaler scaler in spriteScalers) {
+                scaler.UpdateBasedOnResolution();
+            }
+            borderEffect.UpdateBasedOnResolution();
+            effectMask.UpdateBasedOnResolution();
         }
 
     }

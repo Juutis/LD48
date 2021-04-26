@@ -27,7 +27,7 @@ public class Door : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         if (firstSubmarineHit && other.gameObject.tag == "Player") {
             firstSubmarineHit = false;
-            UIPopupManager.main.ShowPopup("Clearly a pathway", "The must be some sort of way to open this!");
+            UIPopupManager.main.ShowPopup("Clearly a pathway", "There must be some sort of way to open this!");
         }
     }
 }

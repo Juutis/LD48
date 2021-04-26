@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     {
         player = FindObjectOfType<PlayerControls>();
         UIPopupManager.main.ShowPopup(
-            "Murky mess",
+            "Sunken Cost",
             "You are a small-time submarine enterpreneur. " +
             "Recently the waters have become more and more dangerous and the locals are scared of going into the water. "+
             "You are at risk of going bankrupt as no customers wish to board your vessel, " +

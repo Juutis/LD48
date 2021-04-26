@@ -19,7 +19,7 @@ public class WaterBorderEffect : MonoBehaviour
         UpdateBasedOnResolution();
     }
     
-    void UpdateBasedOnResolution() {
+    public void UpdateBasedOnResolution() {
         currentScreenWidth = Screen.width;
         currentScreenHeight = Screen.height;
         float screenHeight = Camera.main.orthographicSize * 2.0f;
@@ -38,10 +38,10 @@ public class WaterBorderEffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Screen.width != currentScreenWidth || Screen.height != currentScreenHeight) {
+        /*if (Screen.width != currentScreenWidth || Screen.height != currentScreenHeight) {
             Debug.Log($"Updated WaterBorderEffect from {currentScreenWidth}, {currentScreenHeight} -> {Screen.width}, {Screen.height}");
             UpdateBasedOnResolution();
-        }
+        }*/
         transform.position = new Vector3(target.position.x, transform.position.y, transform.position.z);
     }
 }

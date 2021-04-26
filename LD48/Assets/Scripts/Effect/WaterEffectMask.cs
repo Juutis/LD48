@@ -12,6 +12,8 @@ public class WaterEffectMask : MonoBehaviour
     [SerializeField]
     float height = 10;
 
+
+
     int currentScreenWidth;
     int currentScreenHeight;
     void Start()
@@ -20,7 +22,7 @@ public class WaterEffectMask : MonoBehaviour
         UpdateBasedOnResolution();
     }
 
-    void UpdateBasedOnResolution() {
+    public void UpdateBasedOnResolution() {
         currentScreenWidth = Screen.width;
         currentScreenHeight = Screen.height;
         float screenHeight = Camera.main.orthographicSize * 2.0f;
@@ -38,10 +40,10 @@ public class WaterEffectMask : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Screen.width != currentScreenWidth || Screen.height != currentScreenHeight) {
+        /*if (Screen.width != currentScreenWidth || Screen.height != currentScreenHeight) {
             Debug.Log($"Updated waterEffectMask from {currentScreenWidth}, {currentScreenHeight} -> {Screen.width}, {Screen.height}");
             UpdateBasedOnResolution();
-        }
+        }*/
         transform.position = new Vector3(target.position.x, transform.position.y, target.position.z);
     }
 }
