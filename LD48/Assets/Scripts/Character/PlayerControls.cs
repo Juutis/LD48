@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Hurtable))]
 public class PlayerControls : MonoBehaviour
@@ -21,6 +22,8 @@ public class PlayerControls : MonoBehaviour
 
     private Hurtable hurtable;
 
+    private bool controlsEnabled = true;
+
     private float shot = 0f;
 
     // Start is called before the first frame update
@@ -36,15 +39,29 @@ public class PlayerControls : MonoBehaviour
         ReadConfig();
     }
 
+    public void EnableControls() {
+        controlsEnabled = true;
+    }
+
+    public void DisableControls() {
+        controlsEnabled = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
+        if (!controlsEnabled) {
+            return;
+        }
         submarine.Accelerate(Input.GetAxis("Vertical") * accelerationSpeed * Time.deltaTime);
         submarine.Rotate(Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime);
 
         float delay = 10f / attackSpeed;
         if (Input.GetMouseButton(0) && (Time.time - shot > delay))
         {
+            if (EventSystem.current.IsPointerOverGameObject()) {
+                return;
+            }
             if (weapon != null)
             {
                 weapon.Shoot(transform, submarine.GetRotation(), damage);

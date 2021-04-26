@@ -78,6 +78,10 @@ public class Hurtable : MonoBehaviour
         currentHealth = Mathf.Min(maxHealth, currentHealth + health);
     }
 
+    public void HealToFull() {
+        currentHealth = maxHealth;
+    }
+
     public void UpgradeMaxHealth(float upgrade)
     {
         maxHealth += upgrade;

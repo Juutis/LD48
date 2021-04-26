@@ -13,8 +13,11 @@ public class UIPopup : MonoBehaviour
     private Text txtTitle;
     private Text txtMessage;
 
-    public void Init(Transform container)
+    private UIPopupManager manager;
+
+    public void Init(Transform container, UIPopupManager manager)
     {
+        this.manager = manager;
         txtTitle = this.FindChildObject("titleText").GetComponent<Text>();
         txtMessage = this.FindChildObject("messageText").GetComponent<Text>();
         transform.SetParent(container, false);
@@ -36,6 +39,7 @@ public class UIPopup : MonoBehaviour
     public void ShowFinished()
     {
         showing = false;
+        manager.ShowFinished();
     }
 
     public void Hide()
@@ -51,5 +55,6 @@ public class UIPopup : MonoBehaviour
     {
         Time.timeScale = 1f;
         hiding = false;
+        manager.HideFinished();
     }
 }
