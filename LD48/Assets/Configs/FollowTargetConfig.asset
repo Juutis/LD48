@@ -15,6 +15,6 @@ MonoBehaviour:
   FollowX: 1
   FollowY: 1
   FollowZ: 0
-  Speed: 2
+  Speed: 3
   UseLateUpdate: 1
   UseSmoothDamp: 0
