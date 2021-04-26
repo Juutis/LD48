@@ -23,6 +23,7 @@ public class WaterEffect : MonoBehaviour
     [SerializeField]
     private LayerMask optimizedLayerMask;
     private LayerMask origLayerMask;
+    public bool Optimize = false;
 
     void Awake()
     {
@@ -50,14 +51,17 @@ public class WaterEffect : MonoBehaviour
     public void Update()
     {
         // hax optimization
-        var camera = Camera.main;
-        if (effectEnabled && camera.transform.position.y < -20)
+        if (Optimize)
         {
-            camera.cullingMask = optimizedLayerMask;
-        }
-        else
-        {
-            camera.cullingMask = origLayerMask;
+            var camera = Camera.main;
+            if (effectEnabled && camera.transform.position.y < -20)
+            {
+                camera.cullingMask = optimizedLayerMask;
+            }
+            else
+            {
+                camera.cullingMask = origLayerMask;
+            }
         }
     }
 }
