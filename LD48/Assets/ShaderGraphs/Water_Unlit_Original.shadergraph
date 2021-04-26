@@ -2806,7 +2806,7 @@
     "m_DefaultRefNameVersion": 0,
     "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Texture2D_3ABD3B8C",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_rt",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,

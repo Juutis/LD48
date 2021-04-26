@@ -7,10 +7,17 @@ public class WaterEffect : MonoBehaviour
     [SerializeField]
     private bool SetMainCameraLayerMask;
     [SerializeField]
+    private Camera renderCamera;
+    [SerializeField]
     private LayerMask layerMask;
 
     [SerializeField]
     private RenderTexture renderTexture;
+
+    [SerializeField]
+    private Material renderMaterial;
+
+    private RenderTexture currentRenderTexture;
 
     [SerializeField]
     private Transform container;
@@ -27,11 +34,17 @@ public class WaterEffect : MonoBehaviour
 
     void Awake()
     {
-        renderTexture.width = Screen.width;
-        renderTexture.height = Screen.height;
+
     }
+
     void Start()
     {
+        currentRenderTexture = Instantiate(renderTexture);
+        currentRenderTexture.width = Screen.width;
+        currentRenderTexture.height = Screen.height;
+        Debug.Log($"Setting up renderTexture with size: {currentRenderTexture.width}, {currentRenderTexture.height}");
+        renderCamera.targetTexture = currentRenderTexture;
+        renderMaterial.SetTexture("_rt", currentRenderTexture);
         if (SetMainCameraLayerMask)
         {
             Camera.main.cullingMask = layerMask.value;
@@ -63,5 +76,17 @@ public class WaterEffect : MonoBehaviour
                 camera.cullingMask = origLayerMask;
             }
         }
+        int newScreenWidth = Screen.width;
+        int newScreenHeight = Screen.height;
+        if (newScreenWidth != currentRenderTexture.width || newScreenHeight != currentRenderTexture.height) {
+            Debug.Log($"Changed screen width from {currentRenderTexture.width} to {newScreenWidth}");
+            Debug.Log($"Changed screen height from {renderTexture.height} to {newScreenHeight}");
+            currentRenderTexture = Instantiate(renderTexture);
+            currentRenderTexture.height = newScreenHeight;
+            currentRenderTexture.width = newScreenWidth;
+            renderCamera.targetTexture = currentRenderTexture;
+            renderMaterial.SetTexture("_rt", currentRenderTexture);
+        }
+
     }
 }

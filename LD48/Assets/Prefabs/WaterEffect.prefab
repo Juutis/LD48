@@ -445,15 +445,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SetMainCameraLayerMask: 0
+  renderCamera: {fileID: 7348727350597319467}
   layerMask:
     serializedVersion: 2
     m_Bits: 2048
   renderTexture: {fileID: 8400000, guid: f1398dd21ec2a5d49a1a57cd1e5173bc, type: 2}
+  renderMaterial: {fileID: 2100000, guid: 0582d953debf68540941bc20bbf81acc, type: 2}
   container: {fileID: 6618499884248468540}
   effectEnabled: 1
   optimizedLayerMask:
     serializedVersion: 2
     m_Bits: 2080
+  Optimize: 0
 --- !u!1 &8396868527093251592
 GameObject:
   m_ObjectHideFlags: 0
