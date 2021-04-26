@@ -15,4 +15,9 @@ public class FishConfig : ScriptableObject
     public float AggroRange = 3.0f;
     public float AnimationSpeed = 1.0f;
     public float AggroSpeedScaling = 2.0f;
+    public float ExplodeTriggerDistance = 0.0f;
+    public float ExplodeDamage = 0.0f;
+    public float ExplodeRadius = 0.0f;
+    public float ExplodeDelay = 0.0f;
+    public Color ExplodeTintColor = Color.yellow;
 }

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using UnityEngine.Experimental.Rendering.Universal;
 
 [RequireComponent(typeof(Hurtable), typeof(LootDropper))]
 public class Fish : MonoBehaviour
@@ -23,11 +25,21 @@ public class Fish : MonoBehaviour
     private int playerLayer;
     private Transform player;
 
-    private FishState state = FishState.IDLE;
+    public FishState state = FishState.IDLE;
 
 
     private FishSpawner spawner;
     private FishSpawn spawn;
+
+    private float explodeTimer;
+    private List<SpriteRenderer> spriteRenderers;
+    private List<Color> origColors;
+
+    [SerializeField]
+    private Light2D light;
+
+    [SerializeField]
+    private ParticleSystem explosionExplosion;
 
     public void Init(FishSpawner fishSpawner, FishSpawn fishSpawn, Transform parent, Vector2 pos) {
         spawner = fishSpawner;
@@ -60,6 +72,10 @@ public class Fish : MonoBehaviour
             direction = Vector2.up;
         }
         Swim();
+
+        spriteRenderers = new List<SpriteRenderer>(GetComponentsInChildren<SpriteRenderer>());
+        spriteRenderers.AddRange(GetComponents<SpriteRenderer>());
+        origColors = spriteRenderers.Select(rend => rend.color).ToList();
     }
 
     // Update is called once per frame
@@ -108,6 +124,11 @@ public class Fish : MonoBehaviour
                 rigidBody.gravityScale = 0.0f;
             }
         }
+
+        if (state == FishState.EXPLODE)
+        {
+            explodeTint();
+        }
     }
 
     public bool IsInWater()
@@ -136,6 +157,11 @@ public class Fish : MonoBehaviour
 
     public void Move(bool skipRetarget)
     {
+        if (state == FishState.EXPLODE)
+        {
+            return;
+        }
+
         anim.SetBool("swim", false);
         if (!skipRetarget)
         {
@@ -236,12 +262,19 @@ public class Fish : MonoBehaviour
 
     private void handleState()
     {
-        if (!config.IsAggressive)
+        if (state == FishState.COOLDOWN || state == FishState.EXPLODE)
         {
             return;
         }
 
-        if (state == FishState.COOLDOWN)
+        if (config.ExplodeTriggerDistance > 0.001f && Vector2.Distance(player.position, transform.position) < config.ExplodeTriggerDistance)
+        {
+            state = FishState.EXPLODE;
+            Invoke("Explode", config.ExplodeDelay);
+            explodeTimer = Time.time;
+        }
+
+        if (!config.IsAggressive)
         {
             return;
         }
@@ -255,12 +288,46 @@ public class Fish : MonoBehaviour
             state = FishState.IDLE;
         }
     }
-    
+
+    public void Explode()
+    {
+        if (Vector2.Distance(player.position, transform.position) < config.ExplodeRadius)
+        {
+            player.GetComponent<Hurtable>().Hurt(config.ExplodeDamage);
+        }
+
+        if (explosionExplosion != null)
+        {
+            var effect = Instantiate(explosionExplosion);
+            effect.transform.position = transform.position;
+        }
+
+        Die();
+    }
+
+    private void explodeTint()
+    {
+        var t = (Mathf.Sin((Time.time - explodeTimer) * Mathf.PI * 10) + 1.0f) / 2.0f;
+        var index = 0;
+        foreach (var rend in spriteRenderers)
+        {
+            var origColor = origColors[index++];
+            var color = Color.Lerp(config.ExplodeTintColor, origColor, t);
+            rend.color = color;
+        }
+
+        if (light != null)
+        {
+            light.intensity = t * 2.0f;
+        }
+    }
+
 }
 
 public enum FishState
 {
     IDLE,
     ATTACK,
-    COOLDOWN
+    COOLDOWN,
+    EXPLODE
 }

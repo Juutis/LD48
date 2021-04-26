@@ -168,6 +168,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4302395289262200044, guid: 48181c8cd10882347a6dd87156f6eb6c, type: 3}
+      propertyPath: light
+      value: 
+      objectReference: {fileID: 7903309981157666301}
+    - target: {fileID: 4302395289262200044, guid: 48181c8cd10882347a6dd87156f6eb6c, type: 3}
+      propertyPath: config
+      value: 
+      objectReference: {fileID: 11400000, guid: 807235503db63a14b8be710fab28cc18, type: 2}
+    - target: {fileID: 4302395289262200044, guid: 48181c8cd10882347a6dd87156f6eb6c, type: 3}
+      propertyPath: explosionExplosion
+      value: 
+      objectReference: {fileID: 8347928463204686868, guid: e51636bbe43474a48986f20138782bba, type: 3}
     - target: {fileID: 4302395289262200046, guid: 48181c8cd10882347a6dd87156f6eb6c, type: 3}
       propertyPath: m_Size.x
       value: 1.6648906

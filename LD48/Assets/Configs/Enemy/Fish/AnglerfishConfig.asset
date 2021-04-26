@@ -24,3 +24,8 @@ MonoBehaviour:
   AggroRange: 10
   AnimationSpeed: 1
   AggroSpeedScaling: 2
+  ExplodeTriggerDistance: 5
+  ExplodeDamage: 3
+  ExplodeRadius: 5
+  ExplodeDelay: 2
+  ExplodeTintColor: {r: 0, g: 0, b: 0, a: 1}
