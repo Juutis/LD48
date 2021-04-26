@@ -17,69 +17,69 @@ MonoBehaviour:
     description: Install makeshift warheads to torpedoes. The explosion deals increased
       damage, but won't do much against sturdy objects.
     value: 20
-    price: 100
+    price: 5
   - loreText: Add explosion agent to the torpedo mixture
-    description: Increase potency of torpedo warheads. The explosion deals great
-      damage and it can be used to clear obstacles blocking your path.
+    description: Greatly Increase potency of torpedo warheads. The explosion is capable
+      of clearing obstacles blocking your path.
     value: 30
-    price: 150
+    price: 25
   attackSpeed:
-  - loreText: Optimize shooting mechanism
-    description: attack speed +5
+  - loreText: Unclog the torpedo tube
+    description: Torpedoes can be launched at an increased rate.
     value: 10
-    price: 150
-  - loreText: Oil the torpedoes
-    description: attack speed +5
+    price: 5
+  - loreText: Oil the torpedo tube
+    description: Torpedoes can be launched at a greatly increased rate.
     value: 15
-    price: 200
-  - loreText: Cover everything with teflon
-    description: attack speed +10
+    price: 15
+  - loreText: Cover torpedo tube with teflon
+    description: Torpedoes can be launched at a blazing rate.
     value: 20
-    price: 350
+    price: 30
   movementSpeed:
   - loreText: Fix the engine
-    description: movement speed +2
+    description: Increases movement speed
     value: 2
-    price: 85
+    price: 5
   - loreText: Optimize fuel intake
-    description: movement speed +2
+    description: Greatly increases movement speed
     value: 2
-    price: 125
-  - loreText: Add nitrous
-    description: movement speed +2
+    price: 10
+  - loreText: Add NOS module
+    description: Turn your vessel into a submerged rocket
     value: 2
-    price: 300
+    price: 15
   lights:
-  - loreText: Change the old bulbs
-    description: let's you go deeper
+  - loreText: Install old flashlight
+    description: Grants a small headlight
     value: 1
-    price: 60
-  - loreText: Change to high power leds
-    description: let's you go even deeper
+    price: 5
+  - loreText: Install high power led lights
+    description: Increases headlight effectiveness
     value: 1
-    price: 200
-  - loreText: Add halogen lights
-    description: let's you go derp
+    price: 15
+  - loreText: Install halogen lights
+    description: Greatly increases headlight effectiveness
     value: 1
-    price: 550
+    price: 35
   health:
   - loreText: Fix microfractures in the hull
-    description: health +25
+    description: Increases hull strength
     value: 20
-    price: 50
-  - loreText: Enforce weak points
-    description: health +20
+    price: 10
+  - loreText: Reinforce hull seams
+    description: Greatly increases hull strength
     value: 20
-    price: 120
-  - loreText: You know what to do ;)
-    description: health +20
+    price: 20
+  - loreText: Install military grade hull
+    description: The hull becomes almost indestructible
     value: 20
-    price: 230
+    price: 45
   homingTorpedos:
   - loreText: Remote Controlled Torpedoes
     description: Torpedoes gain tracking
     value: 1
-    price: 100
+    price: 10
   <DepthDamages>k__BackingField:
   - <HealthBelow>k__BackingField: 60
     <Depth>k__BackingField: 100
