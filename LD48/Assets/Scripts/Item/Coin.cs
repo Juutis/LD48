@@ -24,6 +24,7 @@ public class Coin : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             GameManager.main.AddMoney(1);
+            SoundPlayer.main.PlaySound(GameSoundType.CollectCoin);
             Destroy(gameObject);
         }
     }

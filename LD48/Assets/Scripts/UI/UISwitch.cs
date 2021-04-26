@@ -44,6 +44,7 @@ public class UISwitch : MonoBehaviour
     public void Toggle() {
         status = !status;
         UpdateBasedOnStatus();
+        SoundPlayer.main.PlaySound(GameSoundType.ShopOK);
     }
 
     public void UpdateBasedOnStatus() {

@@ -28,6 +28,7 @@ public class Chest : MonoBehaviour
     public void Die()
     {
         lootDropper.DropLoot();
+        SoundPlayer.main.PlaySound(GameSoundType.OpenChest);
         Destroy(gameObject);
     }
 }

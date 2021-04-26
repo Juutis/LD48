@@ -87,6 +87,7 @@ public class UIPopupManager : MonoBehaviour
     }
 
     public void ShowPauseMenu() {
+        SoundPlayer.main.PlaySound(GameSoundType.ShopOK);
         if (!PauseMenuCanBeOpened) {
             return;
         }

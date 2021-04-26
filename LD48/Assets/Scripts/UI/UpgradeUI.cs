@@ -57,6 +57,7 @@ public class UpgradeUI : MonoBehaviour
 
     public void Close()
     {
+        SoundPlayer.main.PlaySound(GameSoundType.ShopOK);
         Time.timeScale = 1f;
         open = false;
         upgradeUI.SetActive(open);
@@ -66,6 +67,7 @@ public class UpgradeUI : MonoBehaviour
 
     public void Open()
     {
+        SoundPlayer.main.PlaySound(GameSoundType.ShopOK);
         Time.timeScale = 0f;
         open = true;
         upgradeUI.SetActive(open);
@@ -86,5 +88,6 @@ public class UpgradeUI : MonoBehaviour
     public void Upgrade(float value, UpgradeType type)
     {
         gameManager.Upgrade(value, type);
+        SoundPlayer.main.PlaySound(GameSoundType.ShopUpgrade);
     }
 }

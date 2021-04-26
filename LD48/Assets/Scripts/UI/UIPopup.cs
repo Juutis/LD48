@@ -60,6 +60,7 @@ public class UIPopup : MonoBehaviour
     {
         if (!hiding)
         {
+            SoundPlayer.main.PlaySound(GameSoundType.ShopOK);
             hiding = true;
             animator.SetTrigger("Hide");
         }

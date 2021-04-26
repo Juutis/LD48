@@ -84,5 +84,9 @@ public enum GameSoundType
     TorpedoHitWall,
     TorpedoHitFish,
     TorpedoExplodeWeak,
-    TorpedoExplodeStrong
+    TorpedoExplodeStrong,
+    CollectCoin,
+    OpenChest,
+    ShopUpgrade,
+    ShopOK
 }
