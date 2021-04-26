@@ -88,5 +88,7 @@ public enum GameSoundType
     CollectCoin,
     OpenChest,
     ShopUpgrade,
-    ShopOK
+    ShopOK,
+    SubmarineGetHit,
+    SubmarineCrash
 }
